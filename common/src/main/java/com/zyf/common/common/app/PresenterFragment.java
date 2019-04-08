@@ -1,8 +1,7 @@
 package com.zyf.common.common.app;
 
 import android.content.Context;
-
-import com.zyf.common.factory.presenter.BaseContract;
+import com.zyf.common.factory.presenter.base.BaseContract;
 
 public abstract class PresenterFragment<Presenter extends BaseContract.Presenter> extends Fragment
 implements BaseContract.View<Presenter>{

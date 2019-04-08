@@ -1,4 +1,6 @@
-package com.zyf.common.factory.presenter;
+package com.zyf.common.factory.presenter.base;
+
+import com.zyf.common.factory.presenter.base.BaseContract;
 
 /**
  * 基类Presenter

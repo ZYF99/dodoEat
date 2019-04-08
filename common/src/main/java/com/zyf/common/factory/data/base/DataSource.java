@@ -1,14 +1,17 @@
-package com.zyf.common.factory.data;
+package com.zyf.common.factory.data.base;
 
 import android.support.annotation.StringRes;
 
-public class DataSource {
+/**
+ * 数据源接口定义
+ */
+
+public interface DataSource {
 
     /**
      * 成功与失败组成的接口
      */
     interface Callback<T> extends SucceedCallback<T>,FailedCallback<T> {
-
     }
 
     /**

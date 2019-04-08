@@ -1,8 +1,12 @@
 package com.zyf.factory;
 
+import android.support.annotation.StringRes;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.zyf.common.common.app.Application;
+import com.zyf.common.factory.data.base.DataSource;
+import com.zyf.factory.model.RspModel;
 import com.zyf.factory.utils.AExclusionStrategy;
 
 import java.util.concurrent.Executor;
@@ -59,5 +63,38 @@ public class Factory {
     public static Gson getGson() {
         return instance.gson;
     }
+
+
+    /**
+     * 进行错误Code的解析
+     * 把网络返回的Code值进行统一的规划并返回一个String资源
+     *
+     * @param model    RspModel
+     * @param callback DataSource.FailedCallback 用于返回一个错误Id
+     */
+    public static void decodeRspCode(RspModel model,DataSource.FailedCallback callback) {
+        if (model == null) {
+            return;
+        }
+
+        // 进行Code区分
+        switch (model.getCode()) {
+            case RspModel.SUCCEED:
+                return;
+            case RspModel.ERROR_UNKNOWN:
+            default:
+                decodeRspCode(R.string.data_rsp_error_unknown, callback);
+                break;
+        }
+    }
+
+    private static void decodeRspCode(@StringRes int resId,
+                                      final DataSource.FailedCallback callback) {
+        if (callback != null) {
+            callback.onDataNotAvaliable(resId);
+        }
+    }
+
+
 
 }

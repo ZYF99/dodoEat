@@ -31,11 +31,20 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //design
+    api "com.android.support:design:$rootProject.ext.supportVersion"
     //glide图形记载框架
     api "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
     //基础配套元件框架
     api "net.qiujuer.genius:kit-handler:$rootProject.ext.geniusVersion"
     //Gson框架
     api "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
+    //butterKnife
+    api "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
+    //genius
+    api "net.qiujuer.genius:ui:$rootProject.ext.geniusVersion"
+    api "net.qiujuer.genius:res:$rootProject.ext.geniusVersion"
+
     implementation project(':lang')
 }

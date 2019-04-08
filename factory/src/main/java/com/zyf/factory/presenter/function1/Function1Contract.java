@@ -1,6 +1,6 @@
 package com.zyf.factory.presenter.function1;
 
-import com.zyf.common.factory.presenter.BaseContract;
+import com.zyf.common.factory.presenter.base.BaseContract;
 
 /**
  * 功能1模块的契约

@@ -1,6 +1,6 @@
 package com.zyf.factory.presenter.function1;
 
-import com.zyf.common.factory.presenter.BasePresenter;
+import com.zyf.common.factory.presenter.base.BasePresenter;
 
 public class Func1Presenter extends BasePresenter<Function1Contract.View> implements Function1Contract.Presenter{
 

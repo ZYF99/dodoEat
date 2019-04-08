@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="data_network_error">网络错误！</string>
+    <string name="data_rsp_error_unknown">未知错误(ρ_・).。</string>
+    <string name="data_rsp_error_service">服务器错误(ρ_・).。</string>
+    <string name="data_rsp_error_parameters">抱歉，参数错误哦! O_o</string>
+</resources>

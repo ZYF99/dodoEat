@@ -6,7 +6,6 @@ public class Common {
      * 通常用于一些配置
      */
     public interface Constance {
-
         //基础的网络请求地址 外网用这个
         String API_URL = "http://192.168.43.66:8080/api/";
 

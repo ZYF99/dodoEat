@@ -1,4 +1,4 @@
-package com.zyf.common.factory.presenter;
+package com.zyf.common.factory.presenter.base;
 
 import android.support.annotation.StringRes;
 

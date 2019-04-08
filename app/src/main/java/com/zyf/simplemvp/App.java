@@ -1,5 +1,6 @@
 package com.zyf.simplemvp;
 
+
 import com.zyf.common.common.app.Application;
 import com.zyf.factory.Factory;
 
@@ -10,7 +11,6 @@ public class App extends Application {
 
         //初始化Factory
         Factory.setup();
-
 
     }
 }
