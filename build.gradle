@@ -33,6 +33,7 @@ ext {
 
     // 相关依赖库版本
     supportVersion = '28.0.0'
+    bottomNavigationViewExVersion = '2.0.4'
     butterknifeVersion = '9.0.0-rc3'
     geniusVersion = '2.1.0'
     zyfuiVersion = '1.0.0'

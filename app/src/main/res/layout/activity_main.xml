@@ -12,6 +12,7 @@
         android:layout_height="@dimen/actionBarWithStatusBarSize"
         android:elevation="@dimen/len_2"
         android:outlineProvider="bounds"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -30,9 +31,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:textColor="@color/black_alpha_112"
                 android:text="@string/app_name"
-                android:textAppearance="@style/TextAppearance.Title" />
+                android:textAppearance="@style/TextAppearance.Title"
+                android:textColor="@color/black_alpha_112" />
 
         </FrameLayout>
     </android.support.design.widget.AppBarLayout>
@@ -53,8 +54,9 @@
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="@dimen/len_52"
-        android:layout_alignParentBottom="true"
         android:background="@color/white"
+        app:itemIconTint="@color/text_nav"
+        app:itemTextColor="@color/text_nav"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

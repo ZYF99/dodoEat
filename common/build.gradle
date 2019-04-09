@@ -31,6 +31,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //ViewPagerHelper
+    implementation 'com.github.LillteZheng:ViewPagerHelper:v0.4'
     //design
     api "com.android.support:design:$rootProject.ext.supportVersion"
     //glide图形记载框架

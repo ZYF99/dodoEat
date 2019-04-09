@@ -4,16 +4,13 @@
     <item
         android:id="@+id/nav_1"
         android:title="@string/page1"
-        android:icon="@drawable/ic_back"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/nav_2"
         android:title="@string/page2"
-        android:icon="@drawable/ic_back"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/nav_3"
         android:title="@string/page3"
-        android:icon="@drawable/ic_back"
         app:showAsAction="ifRoom" />
 </menu>

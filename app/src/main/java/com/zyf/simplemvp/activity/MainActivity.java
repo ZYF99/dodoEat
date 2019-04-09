@@ -2,6 +2,7 @@ package com.zyf.simplemvp.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.os.Bundle;
@@ -73,7 +74,10 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
 
         //添加对底部按钮点击的监听
         mNavigation.setOnNavigationItemSelectedListener(this);
-
+        mNavigation.enableAnimation(false);
+        mNavigation.enableShiftingMode(false);
+        mNavigation.enableItemShiftingMode(false);
+        mNavigation.setIconVisibility(false);
         //toolbar初始化
         Glide.with(this).load(R.drawable.default_banner_chat).
                 centerCrop().into(new ViewTarget<View, GlideDrawable>(mLayAppBar) {
