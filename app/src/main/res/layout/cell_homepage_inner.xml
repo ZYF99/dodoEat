@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp"
+    android:backgroundTint="@color/white"
+    android:paddingBottom="@dimen/len_12"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/len_4"
+    app:cardElevation="0dp"
+    app:cardPreventCornerOverlap="true"
+    tools:targetApi="lollipop">
+
+    <LinearLayout
+        android:id="@+id/btn_cell"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/cell_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/len_8"
+            android:paddingRight="@dimen/len_8"
+            android:paddingBottom="@dimen/len_8">
+
+            <TextView
+                android:id="@+id/cell_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_6"
+                android:layout_weight="0"
+                android:gravity="start"
+                android:maxLines="2"
+                android:text="标题"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_8"
+                android:layout_weight="0"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingTop="@dimen/len_2"
+                android:paddingBottom="@dimen/len_2">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/cell_author_portrait"
+                    android:layout_width="@dimen/len_16"
+                    android:layout_height="@dimen/len_16"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/cell_author_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="Miya_楠楠"
+                    android:textColor="@color/black_alpha_240"
+                    android:textSize="8sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cell_author_portrait"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.666" />
+
+                <LinearLayout
+                    android:id="@+id/btn_heart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ic_heart"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginRight="@dimen/len_6"
+                        app:srcCompat="@drawable/ic_heart_nor" />
+
+                    <TextView
+                        android:id="@+id/cell_likes"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:gravity="center"
+                        android:text="314"
+                        android:textColor="@color/textSecond"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

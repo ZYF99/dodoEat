@@ -1,22 +1,20 @@
 package com.zyf.factory.net;
 
 import com.zyf.factory.model.RspModel;
-import com.zyf.factory.model.fun1.Fun1Model;
-import com.zyf.factory.model.fun1.Fun1RspModel;
+import com.zyf.factory.model.homepage.Dynamic;
+import com.zyf.factory.model.homepage.RequestModel_getDynamicList;
+
+import java.util.List;
 
 import retrofit2.Call;
-import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.PUT;
-import retrofit2.http.Path;
 
 public interface RemoteService {
 
 
-    //fun1的请求
+    //获取动态列表的请求
     @GET("user/contact")
-    Call<RspModel<Fun1RspModel>> fun1(Fun1Model model);
+    Call<RspModel<List<Dynamic>>> getList(RequestModel_getDynamicList model);
 
 
     /**

@@ -32,8 +32,17 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     api "com.android.support:design:$rootProject.ext.supportVersion"
+
+    //SmartRefreshLayout
+    implementation "com.scwang.smartrefresh:SmartRefreshLayout:$rootProject.ext.smartrefreshlayoutVersion"
+    //没有使用特殊Header，可以不加这行
+    implementation "com.scwang.smartrefresh:SmartRefreshHeader:$rootProject.ext.smartrefreshlayoutVersion"
+    //BRVAH 强大的recyclerView框架
+    implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.ext.brvahVersion"
+    //zyf ui
+    //implementation "com.github.ZYF99:UI2:$rootProject.ext.zyfuiVersion"
     //ViewPagerHelper
-    implementation 'com.github.LillteZheng:ViewPagerHelper:v0.8'
+    implementation "com.github.LillteZheng:ViewPagerHelper:v$rootProject.ext.viewpagerhelperVersion"
     //BottomNavigationViewEx
     implementation "com.github.ittianyu:BottomNavigationViewEx:$rootProject.ext.bottomNavigationViewExVersion"
     //butterKnife
@@ -41,5 +50,8 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
     implementation project(':factory')
     implementation project(':common')
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+
 
 }

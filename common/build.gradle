@@ -31,13 +31,22 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
-    //ViewPagerHelper
-    implementation 'com.github.LillteZheng:ViewPagerHelper:v0.4'
-    //design
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
     api "com.android.support:design:$rootProject.ext.supportVersion"
+
+
     //glide图形记载框架
     api "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    //SmartRefreshLayout
+    implementation "com.scwang.smartrefresh:SmartRefreshLayout:$rootProject.ext.smartrefreshlayoutVersion"
+    implementation "com.scwang.smartrefresh:SmartRefreshHeader:$rootProject.ext.smartrefreshlayoutVersion"//没有使用特殊Header，可以不加这行
+    //BRVAH 强大的recyclerView框架
+    implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.ext.brvahVersion"
+    //ViewPagerHelper
+    implementation "com.github.LillteZheng:ViewPagerHelper:v$rootProject.ext.viewpagerhelperVersion"
+    //CircleImageView
+    api "de.hdodenhof:circleimageview:$rootProject.ext.circleimageviewVersion"
+
     //基础配套元件框架
     api "net.qiujuer.genius:kit-handler:$rootProject.ext.geniusVersion"
     //Gson框架

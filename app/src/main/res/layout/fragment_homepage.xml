@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragment.homepage.Fragment_homepage">
+
+    <FrameLayout
+        android:id="@+id/lay_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipChildren="true"
+        android:clipToPadding="true"
+        android:paddingTop="@dimen/len_4"
+        android:paddingBottom="@dimen/len_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.zhengsr.viewpagerlib.indicator.TabIndicator
+            android:id="@+id/line_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:paddingBottom="@dimen/len_4"
+            android:background="#fff"
+            android:gravity="center"
+            app:tab_color="@color/colorAccent"
+            app:tab_height="2dp"
+            app:tab_show="true"
+            app:tab_text_change_color="#000000"
+            app:tab_text_default_color="#C7C7C7"
+            app:tab_text_type="normaltext"
+            app:tab_textsize="14sp"
+            app:tab_width="@dimen/len_16"
+            app:tap_type="rect"
+            app:visiabel_size="3">
+
+        </com.zhengsr.viewpagerlib.indicator.TabIndicator>
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/frame_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_28"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_search"
+        android:gravity="center"
+        android:paddingLeft="@dimen/len_4"
+        android:paddingRight="@dimen/len_4"
+        app:layout_constraintBottom_toTopOf="@+id/splase_viewpager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay_indicator">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:adjustViewBounds="true"
+            android:tint="@color/textSecond"
+            app:srcCompat="@drawable/ic_search" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/len_12"
+            android:text='大家都在搜"烤脑花"'
+            android:textColor="@color/textSecond"
+            android:textSize="@dimen/font_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+
+    <com.zhengsr.viewpagerlib.view.GlideViewPager
+        android:id="@+id/splase_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame_search" />
+
+
+</android.support.constraint.ConstraintLayout>

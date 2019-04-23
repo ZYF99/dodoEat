@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--基础主色-->
-    <color name="colorPrimary">#31373d</color>
-    <color name="colorPrimaryDark">#31373d</color>
-    <color name="colorAccent">#1572fc</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#FF5722</color>
     <color name="colorLight">@color/white</color>
     <color name="colorDark">@color/black</color>
     <color name="colorAccentAlpha">#801572fc</color>
+    <color name="launchback">#31373d</color>
 
     <!--背景色-->
-    <color name="windowsBackground">#f7f7f7</color>
-    <color name="windowsBackgroundLight">#f8f8f8</color>
+    <color name="windowsBackground">#FFFFFF</color>
+    <color name="windowsBackgroundLight">#FFFFFF</color>
+    <color name="listBackground">#8FF7FEFF</color>
 
     <!--字体颜色-->
-    <color name="textPrimary">#4e5864</color>
-    <color name="textSecond">#8d9ca9</color>
+    <color name="textPrimary">#1F1F1F</color>
+    <color name="textSecond">#8D8B8B</color>
     <color name="textAccent">@color/colorAccent</color>
     <color name="textLight">@color/colorLight</color>
     <color name="textDark">#202020</color>
@@ -26,5 +28,9 @@
     <!--遮罩颜色-->
     <color name="maskChatHeader">@color/black_alpha_48</color>
     <!--导航栏Icon遮罩色-->
-    <color name="navIconTintLight">@color/white_alpha_240</color>
+    <color name="navIconTintLight">@color/white</color>
+    <!--添加按钮背景色-->
+    <color name="bg_btn">#FA003A</color>
+    <!--页数背景色-->
+    <color name="bg_pagenum">#8F000000</color>
 </resources>

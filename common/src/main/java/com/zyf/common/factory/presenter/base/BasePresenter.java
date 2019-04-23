@@ -17,7 +17,8 @@ public class BasePresenter<T extends BaseContract.View>
     }
 
     protected void setView(T view) {
-        this.mView = mView;
+        this.mView = view;
+        this.mView.setPresenter(this);
     }
 
     //给子类的使用的获取View的方法

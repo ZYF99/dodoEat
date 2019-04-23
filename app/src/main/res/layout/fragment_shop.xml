@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragment.shop.Fragment_shop">
+
+
+    <LinearLayout
+        android:id="@+id/frame_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_28"
+        android:layout_marginStart="@dimen/len_16"
+        android:layout_marginEnd="@dimen/len_16"
+        android:background="@drawable/bg_search"
+        android:gravity="center"
+        android:paddingLeft="@dimen/len_4"
+        android:paddingRight="@dimen/len_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:adjustViewBounds="true"
+            android:tint="@color/textSecond"
+            app:srcCompat="@drawable/ic_search" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/len_12"
+            android:text="大家都在搜“CoCo”"
+            android:textColor="@color/textSecond"
+            android:textSize="@dimen/font_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_search"
+        android:layout_marginTop="@dimen/len_12"
+        app:layout_constraintTop_toBottomOf="@id/frame_search"
+        android:background="@drawable/tool_bar_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="1dp">
+
+    </View>
+
+    <FrameLayout
+        android:id="@+id/frame_indicator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/len_4"
+        app:layout_constraintBottom_toTopOf="@+id/shop_viewpager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_search">
+
+        <com.zhengsr.viewpagerlib.indicator.TabIndicator
+            android:id="@+id/shop_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:paddingTop="@dimen/len_6"
+            android:paddingBottom="@dimen/len_6"
+
+            app:tab_color="@color/colorAccent"
+            app:tab_height="@dimen/len_6"
+            app:tab_show="true"
+            app:tab_text_change_color="#000000"
+            app:tab_text_default_color="#C7C7C7"
+            app:tab_text_type="normaltext"
+            app:tab_textsize="14sp"
+            app:tab_width="@dimen/len_16"
+            app:tap_type="tri"
+            app:visiabel_size="5">
+
+        </com.zhengsr.viewpagerlib.indicator.TabIndicator>
+
+    </FrameLayout>
+
+
+    <com.zhengsr.viewpagerlib.view.GlideViewPager
+        android:id="@+id/shop_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#F8F8F8"
+        android:overScrollMode="never"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame_indicator" />
+
+
+</android.support.constraint.ConstraintLayout>

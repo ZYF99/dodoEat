@@ -3,7 +3,8 @@ package com.zyf.common.common.app;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+
+import com.zyf.common.common.app.statushelper.StatusBarUtil;
 
 import java.util.List;
 import butterknife.ButterKnife;
@@ -13,9 +14,10 @@ public abstract class Activity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //初始化内部界面
+      //初始化内部界面
         initWindows();
     }
+
 
     protected void initWindows() {
         if (initArgs(getIntent().getExtras())) {
@@ -39,7 +41,6 @@ public abstract class Activity extends AppCompatActivity {
 
     //初始化控件
     protected void initWidget() {
-        Log.d("AAAAAA", "initWidget: ");
         ButterKnife.bind(this);
     }
 

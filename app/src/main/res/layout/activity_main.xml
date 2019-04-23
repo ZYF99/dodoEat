@@ -9,34 +9,18 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/actionBarWithStatusBarSize"
-        android:elevation="@dimen/len_2"
-        android:outlineProvider="bounds"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/statusBarSize"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/len_24"
+        android:paddingRight="@dimen/len_24"
+        android:paddingBottom="@dimen/len_4"
         android:visibility="visible"
+        app:elevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:targetApi="lollipop">
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/statusBarSize"
-            android:paddingLeft="@dimen/len_4"
-            android:paddingRight="@dimen/len_4">
-
-            <TextView
-                android:id="@+id/txt_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/app_name"
-                android:textAppearance="@style/TextAppearance.Title"
-                android:textColor="@color/black_alpha_112" />
-
-        </FrameLayout>
-    </android.support.design.widget.AppBarLayout>
+        tools:targetApi="lollipop" />
 
     <FrameLayout
         android:id="@+id/lay_container"
@@ -50,16 +34,54 @@
 
     </FrameLayout>
 
+
     <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
         android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/len_52"
+        android:layout_height="@dimen/len_48"
         android:background="@color/white"
+        app:elevation="@dimen/len_2"
+        app:itemBackground="@null"
         app:itemIconTint="@color/text_nav"
         app:itemTextColor="@color/text_nav"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navigation_items" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="@dimen/len_2"
+        app:layout_constraintBottom_toBottomOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/navigation">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7" />
+
+        <ImageView
+            android:id="@+id/navigation_center_image"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/len_6"
+            android:layout_marginBottom="@dimen/len_6"
+            android:layout_weight="2"
+            android:background="@drawable/bg_cornerrect"
+            android:contentDescription="@string/app_name"
+            android:padding="5dp"
+            android:src="@drawable/ic_add" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7" />
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

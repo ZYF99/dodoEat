@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="@dimen/len_2"
+    android:layout_marginLeft="@dimen/len_6"
+    android:layout_marginRight="@dimen/len_6"
+    android:backgroundTint="@color/white"
+    android:layout_marginTop="@dimen/len_6"
+    android:paddingBottom="@dimen/len_12"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/len_4"
+    app:cardElevation="0dp"
+    app:cardPreventCornerOverlap="true"
+    tools:targetApi="lollipop">
+
+    <LinearLayout
+        android:id="@+id/btn_cell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/len_8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cell_shopicon"
+                android:layout_width="@dimen/len_32"
+                android:layout_height="@dimen/len_32"
+                android:layout_weight="0"
+                android:src="@drawable/default_banner_chat">
+
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/len_12"
+                android:layout_weight="0"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/cell_shopname"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:maxLines="2"
+                    android:text="标题"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_14" />
+                <TextView
+                    android:id="@+id/cell_shopbrief"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:maxLines="2"
+                    android:text="标题"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/textSecond"
+                    android:textSize="@dimen/font_10" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/len_10"
+            android:layout_weight="0"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/cell_shopimg0"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginRight="@dimen/len_6"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/cell_shopimg1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginRight="@dimen/len_6"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/cell_shopimg2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginRight="@dimen/len_6"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

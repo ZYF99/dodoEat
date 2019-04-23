@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/actionBarWithStatusBarSizeWithShadow"
+        app:layout_behavior="">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/len_24"
+            tools:context=".activity.DynamicActivity">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/actionBarSize"
+                android:background="@color/white"
+                android:gravity="center"
+                android:paddingLeft="@dimen/len_6"
+                android:paddingRight="@dimen/len_6"
+                app:elevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:targetApi="lollipop">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/dynamic_portrait"
+                        android:layout_width="@dimen/len_28"
+                        android:layout_height="@dimen/len_28"
+                        android:layout_marginStart="8dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/dynamic_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Miya_楠楠"
+                        android:textColor="@color/black_alpha_240"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/dynamic_portrait"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/dynamic_btn_follow"
+                        android:layout_width="@dimen/len_60"
+                        android:layout_height="@dimen/len_24"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_btn_follow"
+                        android:text="关注"
+                        android:textColor="@color/bg_btn"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.design.widget.AppBarLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cons_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appbar">
+
+                <com.zhengsr.viewpagerlib.view.BannerViewPager
+                    android:id="@+id/dynamic_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:clipChildren="false"
+                    app:banner_isloop="false"
+                    app:banner_loop_max_count="20"
+                    app:banner_switchtime="600"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="@dimen/len_32"
+                    android:layout_height="@dimen/len_24"
+                    android:layout_marginTop="@dimen/len_8"
+                    android:layout_marginEnd="@dimen/len_8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/bg_pagenum" />
+
+                    <TextView
+                        android:id="@+id/tv_pagenum"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="1/4"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </android.support.constraint.ConstraintLayout>
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <com.zhengsr.viewpagerlib.indicator.ZoomIndicator
+                android:id="@+id/dynamic_arc"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/len_24"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cons_img"
+                app:zoom_alpha_min="0.1"
+                app:zoom_leftmargin="10dp"
+                app:zoom_max="1.3"
+                app:zoom_selector="@color/circle_indicator" />
+
+            <TextView
+                android:id="@+id/dynamic_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/len_16"
+                android:text="内容"
+                android:textColor="@color/black_alpha_240"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dynamic_arc" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dynamic_content">
+
+                <ImageView
+                    android:id="@+id/btn_forward"
+                    android:layout_width="@dimen/len_24"
+                    android:layout_height="@dimen/len_24"
+                    android:layout_marginStart="16dp"
+                    android:tint="@color/textSecond"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_forward" />
+
+                <ImageView
+                    android:id="@+id/btn_like"
+                    android:layout_width="@dimen/len_24"
+                    android:layout_height="@dimen/len_24"
+                    android:layout_marginEnd="@dimen/len_12"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_collect"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_heart_nor" />
+
+                <ImageView
+                    android:id="@+id/btn_collect"
+                    android:layout_width="@dimen/len_24"
+                    android:layout_height="@dimen/len_24"
+                    android:layout_marginEnd="@dimen/len_12"
+                    android:tint="@color/textSecond"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_comment"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_collect" />
+
+
+
+                <ImageView
+                    android:id="@+id/btn_comment"
+                    android:layout_width="@dimen/len_24"
+                    android:layout_height="@dimen/len_24"
+                    android:layout_marginEnd="16dp"
+                    android:tint="@color/textSecond"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_comment" />
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

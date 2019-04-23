@@ -1,16 +1,22 @@
 <resources>
 
     <style name="AppTheme" parent="AppTheme.Base">
-        <!--
-        <item name="toolbarStyle">@style/Widget.Toolbar</item>
+
+ <!--       <item name="toolbarStyle">@style/Widget.Toolbar</item>
         <item name="toolbarNavigationButtonStyle">@style/Widget.ToolbarNavigationButtonStyle</item>
         <item name="actionOverflowButtonStyle">@style/Widget.ActionButton.Overflow</item>
-        <item name="actionOverflowMenuStyle">@style/Widget.PopupMenu.Overflow</item>
-        -->
+        <item name="actionOverflowMenuStyle">@style/Widget.PopupMenu.Overflow</item>-->
+
+
 
         <!--顶部导航条中的Icon和二级字体的颜色-->
-        <item name="colorControlNormal">@color/white_alpha_240</item>
+        <item name="colorControlNormal">@color/black</item>
         <item name="colorControlActivated">@color/textPrimary</item>
+
+        <!-- Material Theme -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.TransStatusBar.Base" parent="AppTheme">
@@ -23,26 +29,26 @@
         <item name="android:windowFrame">@null</item>
     </style>
 
+    <style name="style_textsize">
+        <item name="android:textSize">23sp</item>
+    </style>
+    <style name="style_textsize1">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
     <style name="AppTheme.TransStatusBar" parent="AppTheme.TransStatusBar.Base" />
+
+
 
     <style name="AppTheme.Main" parent="AppTheme.TransStatusBar">
         <item name="toolbarTitleColor">@color/white</item>
         <item name="toolbarMenuIconColor">@color/white</item>
-        <item name="colorControlHighlight">@color/textSecond</item>
+        <item name="colorControlHighlight">@color/black</item>
         <item name="android:windowBackground">@color/windowsBackgroundLight</item>
     </style>
 
-    <style name="AppTheme.Account" parent="AppTheme.TransStatusBar" />
 
-    <style name="AppTheme.Message" parent="AppTheme.TransStatusBar">
-        <item name="android:windowBackground">@color/windowsBackgroundLight</item>
-    </style>
-
-    <style name="AppTheme.Group.Create" parent="AppTheme.TransStatusBar">
-        <item name="colorPrimary">@color/colorAccent</item>
-        <item name="colorPrimaryDark">@color/colorAccent</item>
-        <item name="colorAccent">@color/white</item>
-    </style>
 
     <style name="TextAppearance.Title" parent="@style/TextAppearance.AppCompat.Title">
         <item name="android:textSize">?attr/toolbarTitleSize</item>

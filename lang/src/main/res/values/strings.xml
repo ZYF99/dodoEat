@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">lang</string>
-    <string name="page1">一页</string>
-    <string name="page2">二页</string>
-    <string name="page3">三页</string>
+    <string name="page1">首页</string>
+    <string name="page2">店铺</string>
+    <string name="page3">消息</string>
+    <string name="page4">我的</string>
 </resources>

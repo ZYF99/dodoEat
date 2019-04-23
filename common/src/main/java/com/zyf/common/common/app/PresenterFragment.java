@@ -19,7 +19,7 @@ implements BaseContract.View<Presenter>{
 
     @Override
     public void showError(int str) {
-        //TODO 显示错误信息
+        Application.showToast(str);
     }
 
     @Override

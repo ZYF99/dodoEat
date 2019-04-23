@@ -3,15 +3,27 @@ package com.zyf.common.common.app;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.zyf.common.common.widget.PlaceHolderView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
+
+/**
+* 封装带懒加载的Fragment
+* */
 public abstract class Fragment extends android.support.v4.app.Fragment {
     protected View mRoot;
     protected Unbinder mRootUnbinder;
+    protected PlaceHolderView mPlaceHolderView;
+    //是否以及初始化界面控件
+    private boolean isInitView = false;
+    //界面是否已经可见
+    private boolean isVisible = false;
+
     //是否第一次初始化数据
     protected boolean mIsFirstInitData = true;
 
@@ -31,6 +43,8 @@ public abstract class Fragment extends android.support.v4.app.Fragment {
             View root = inflater.inflate(layId, container, false);
             initWidget(root);
             mRoot = root;
+            isInitView = true;
+            isCanLoadData();
         } else {
             if (mRoot.getParent() != null) {
                 //把当前root从其父控件中移除
@@ -41,8 +55,32 @@ public abstract class Fragment extends android.support.v4.app.Fragment {
     }
 
     @Override
-    public void onViewCreated(View view,Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+
+        //isVisibleToUser这个boolean值表示:该Fragment的UI 用户是否可见，获取该标志记录下来
+        if(isVisibleToUser){
+            Log.d("AAAAA", "该Fragment可见了");
+            isVisible = true;
+            isCanLoadData();
+        }else{
+            isVisible = false;
+        }
+    }
+
+
+    private void isCanLoadData(){
+        //所以条件是view初始化完成并且对用户可见
+        if(isInitView && isVisible ){
+            Log.d("AAAAA", "该Fragment加载数据了");
+            lazyLoad();
+            //防止重复加载数据
+            isInitView = false;
+            isVisible = false;
+        }
+    }
+
+    private void lazyLoad(){
         if (mIsFirstInitData){
             //触发一次后就不会触发
             mIsFirstInitData = false;
@@ -53,6 +91,7 @@ public abstract class Fragment extends android.support.v4.app.Fragment {
         //当View创建完成后初始化数据
         initData();
     }
+
 
     /*初始化相关参数 参数bundle
         参数正确返回true
@@ -87,6 +126,14 @@ public abstract class Fragment extends android.support.v4.app.Fragment {
      * */
     public boolean onBackPressed() {
         return false;
+    }
+
+    /**
+     * 设置占位布局
+     * @param  placeHolderView 实现了占位布局规范的View
+     * */
+    public void setmPlaceHolderView(PlaceHolderView placeHolderView){
+        this.mPlaceHolderView = placeHolderView;
     }
 
 }
