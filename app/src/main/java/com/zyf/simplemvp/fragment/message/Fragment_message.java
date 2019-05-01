@@ -2,9 +2,13 @@ package com.zyf.simplemvp.fragment.message;
 
 
 import android.app.Fragment;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.zyf.common.common.app.PresenterFragment;
 import com.zyf.factory.model.message.Message;
@@ -16,6 +20,9 @@ import net.qiujuer.genius.kit.handler.runable.Action;
 import java.util.ArrayList;
 import java.util.List;
 import butterknife.BindView;
+import butterknife.ButterKnife;
+
+import static com.zyf.simplemvp.R2.id.msghead_btn1;
 
 
 /**
@@ -25,9 +32,16 @@ public class Fragment_message extends PresenterFragment<Contract_fragment_messag
     @BindView(R.id.rec_msg)
     RecyclerView recyclerView;
 
+    View headerView;
+    LinearLayout btn_likeorcollect;
+    LinearLayout btn_follow;
+    LinearLayout btn_comment;
+
+
     MessageRecyclerAdapter adapter;
 
     List<Message>list = new ArrayList<>();
+
 
     public Fragment_message() {
         // Required empty public constructor
@@ -51,6 +65,12 @@ public class Fragment_message extends PresenterFragment<Contract_fragment_messag
         adapter.bindToRecyclerView(recyclerView);
         adapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         mPresenter.refreshList();
+        headerView = LayoutInflater.from(getActivity()).inflate(R.layout.message_header, null);
+        btn_likeorcollect = headerView.findViewById(R.id.msghead_btn1);
+        btn_follow = headerView.findViewById(R.id.msghead_btn2);
+        btn_comment = headerView.findViewById(R.id.msghead_btn3);
+        adapter.addHeaderView(headerView);
+
     }
 
 

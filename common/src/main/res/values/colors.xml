@@ -12,7 +12,8 @@
     <!--背景色-->
     <color name="windowsBackground">#FFFFFF</color>
     <color name="windowsBackgroundLight">#FFFFFF</color>
-    <color name="listBackground">#8FF7FEFF</color>
+    <color name="listBackground">#F8FAFF</color>
+    <color name="layoutBackGround">#F8FAFF</color>
 
     <!--字体颜色-->
     <color name="textPrimary">#1F1F1F</color>
@@ -29,8 +30,10 @@
     <color name="maskChatHeader">@color/black_alpha_48</color>
     <!--导航栏Icon遮罩色-->
     <color name="navIconTintLight">@color/white</color>
-    <!--添加按钮背景色-->
+    <!--按钮背景色-->
     <color name="bg_btn">#FA003A</color>
+    <color name="bg_blue">#2196F3</color>
+    <color name="bg_green">#07BD9F</color>
     <!--页数背景色-->
     <color name="bg_pagenum">#8F000000</color>
 </resources>

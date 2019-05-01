@@ -50,7 +50,7 @@ public class DynamicActivity extends Activity implements Serializable {
     ZoomIndicator zoomIndicator;
     @BindView(R.id.toolbar_back)
     ImageView btn_back;
-    @BindView(R.id.toolbar_title)
+    @BindView(R.id.personal_name)
     TextView tv_title;
     @BindView(R.id.dynamic_content)
     TextView tv_content;
@@ -69,6 +69,8 @@ public class DynamicActivity extends Activity implements Serializable {
     public static void show(Context context, Intent intent) {
         context.startActivity(intent);
     }
+
+
 
 
     //初始化界面前的参数获取

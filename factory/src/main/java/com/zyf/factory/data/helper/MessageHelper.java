@@ -27,9 +27,7 @@ public class MessageHelper {
         list.add(message);
         list.add(message);
         list.add(message);
-        list.add(message);
-        list.add(message);
-        list.add(message);
+
 
         callback.onDataLoaded(list);
         /*

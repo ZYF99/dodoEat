@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/msg_head"
+    android:background="@color/white"
+    android:layout_marginBottom="@dimen/len_12"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/msghead_btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/msghead_btn2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="@dimen/len_36"
+            android:layout_height="@dimen/len_36"
+            android:background="@drawable/bg_cornerrect"
+            android:padding="@dimen/len_8"
+            android:tint="@color/white"
+            app:srcCompat="@drawable/ic_heart_pressed" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/len_6"
+            android:gravity="center"
+            android:padding="@dimen/len_4"
+            android:text="赞和收藏"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_12"  />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/msghead_btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/we"
+            android:layout_width="@dimen/len_36"
+            android:layout_height="@dimen/len_36"
+            android:background="@drawable/bg_cornerrect"
+            android:backgroundTint="@color/bg_blue"
+            android:padding="@dimen/len_8"
+            android:tint="@color/white"
+            app:srcCompat="@drawable/ic_people" />
+
+        <TextView
+            android:id="@+id/ef"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/len_6"
+            android:gravity="center"
+            android:padding="@dimen/len_4"
+            android:text="新增关注"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_12"  />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/msghead_btn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/msghead_btn2"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/qfc"
+            android:layout_width="@dimen/len_36"
+            android:layout_height="@dimen/len_36"
+            android:background="@drawable/bg_cornerrect"
+            android:backgroundTint="@color/bg_green"
+            android:padding="@dimen/len_8"
+            android:tint="@color/white"
+            app:srcCompat="@drawable/ic_comment" />
+
+        <TextView
+            android:id="@+id/wqd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/len_6"
+            android:gravity="center"
+            android:padding="@dimen/len_4"
+            android:text="评论和@"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_12"  />
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
