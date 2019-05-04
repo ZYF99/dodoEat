@@ -46,7 +46,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/len_8"
-                    android:layout_marginTop="4dp"
                     android:layout_marginEnd="@dimen/len_8"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -86,19 +85,16 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_behavior=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/msg_appbar">
+
+
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/cons"
+            android:id="@+id/top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/msg_appbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             tools:context=".activity.DynamicActivity">
 
 
@@ -113,14 +109,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
-                android:id="@+id/linearLayout3"
+                android:id="@+id/btn_myfollowing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
                 android:orientation="vertical"
-                app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
+                app:layout_constraintEnd_toStartOf="@+id/btn_myfans"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
@@ -143,7 +139,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linearLayout2"
+                android:id="@+id/btn_myfans"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -175,14 +171,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linearLayout"
+                android:id="@+id/btn_mycollect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
 
                 android:layout_marginTop="16dp"
                 android:orientation="vertical"
-                app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+                app:layout_constraintStart_toEndOf="@+id/btn_myfans"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
@@ -207,7 +203,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/tv_personal"
+                android:id="@+id/btn_personal"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -221,8 +217,8 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/font_12"
                 app:layout_constraintEnd_toStartOf="@+id/btn_setting"
-                app:layout_constraintStart_toStartOf="@+id/linearLayout3"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+                app:layout_constraintStart_toStartOf="@+id/btn_myfollowing"
+                app:layout_constraintTop_toBottomOf="@+id/btn_myfans" />
 
             <ImageView
                 android:id="@+id/btn_setting"
@@ -238,25 +234,25 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/font_12"
                 android:tint="@color/black_alpha_160"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_personal"
-                app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-                app:layout_constraintTop_toTopOf="@+id/tv_personal" />
+                app:layout_constraintBottom_toBottomOf="@+id/btn_personal"
+                app:layout_constraintEnd_toEndOf="@+id/btn_mycollect"
+                app:layout_constraintTop_toTopOf="@+id/btn_personal" />
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/lin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginEnd="16dp"
                 android:paddingTop="@dimen/len_6"
                 android:paddingBottom="@dimen/len_6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_personal">
+                app:layout_constraintTop_toBottomOf="@+id/btn_personal">
 
                 <ImageView
-                    android:id="@+id/icon_sex"
+                    android:id="@+id/btn_sex"
                     android:layout_width="@dimen/len_12"
                     android:layout_height="@dimen/len_12"
                     android:src="@drawable/ic_sex"
@@ -272,18 +268,18 @@
                     android:layout_marginStart="4dp"
                     android:background="@color/black_alpha_32"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/icon_sex"
+                    app:layout_constraintStart_toEndOf="@+id/btn_sex"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/asfdfs2"
+                    android:id="@+id/btn_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:gravity="center"
                     android:text="完善你的位置信息"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/font_10"
+                    android:textSize="@dimen/font_12"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/view2"
                     app:layout_constraintTop_toTopOf="parent"
@@ -297,7 +293,7 @@
                     android:src="@drawable/ic_next"
                     android:tint="@color/black_alpha_64"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/asfdfs2"
+                    app:layout_constraintStart_toEndOf="@+id/btn_address"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <View
@@ -322,14 +318,14 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/asfdfs3"
+                    android:id="@+id/btn_vip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:gravity="center"
                     android:text="成为会员"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/font_10"
+                    android:textSize="@dimen/font_12"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/icon_sex2"
                     app:layout_constraintTop_toTopOf="parent"
@@ -343,27 +339,82 @@
                     android:src="@drawable/ic_next"
                     android:tint="@color/black_alpha_64"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/asfdfs3"
+                    app:layout_constraintStart_toEndOf="@+id/btn_vip"
                     app:layout_constraintTop_toTopOf="parent" />
 
             </android.support.constraint.ConstraintLayout>
 
             <TextView
+                android:id="@+id/btn_brief"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
                 android:layout_marginEnd="16dp"
-                android:text="添加个人描述，让大家更好地认识你"
-                android:textColor="@color/black"
                 android:paddingTop="@dimen/len_4"
                 android:paddingBottom="@dimen/len_4"
-                android:textSize="@dimen/font_12"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="添加个人描述，让大家更好地认识你"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_14"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lin" />
 
-        </android.support.constraint.ConstraintLayout>
-    </android.support.v4.widget.NestedScrollView>
+            <View
+                android:id="@+id/gang_2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/tool_bar_shadow"
+                app:layout_constraintTop_toBottomOf="@id/btn_brief" />
 
-</android.support.constraint.ConstraintLayout>
+            <com.zhengsr.viewpagerlib.indicator.TabIndicator
+                android:id="@+id/line_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#fff"
+                android:gravity="center"
+                android:paddingBottom="@dimen/len_4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/gang_2"
+                app:tab_color="@color/colorAccent"
+                app:tab_height="2dp"
+                app:tab_show="true"
+                app:tab_text_change_color="#000000"
+                app:tab_text_default_color="#C7C7C7"
+                app:tab_text_type="normaltext"
+                app:tab_textsize="14sp"
+                app:tab_width="@dimen/len_16"
+                app:tap_type="rect"
+                app:visiabel_size="3"
+                tools:background="@color/green_a100">
+
+            </com.zhengsr.viewpagerlib.indicator.TabIndicator>
+
+            <View
+                android:id="@+id/gang_3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/tool_bar_shadow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line_indicator" />
+
+            <com.zhengsr.viewpagerlib.view.GlideViewPager
+                android:id="@+id/personal_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                android:overScrollMode="never"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gang_3"
+                tools:background="@color/green_300" />
+        </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+

@@ -6,7 +6,7 @@ import com.zyf.factory.model.homepage.Dynamic;
 import java.util.List;
 
 /**
- * 仅有列表的Fragment的契约
+ * 仅有列表的Fragment的共有的契约
  */
 public interface Contract_fragment_innerList {
     interface View<T> extends BaseContract.View<Presenter> {

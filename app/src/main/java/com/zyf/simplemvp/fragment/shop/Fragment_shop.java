@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
+
 import com.zhengsr.viewpagerlib.indicator.TabIndicator;
 import com.zhengsr.viewpagerlib.view.GlideViewPager;
 import com.zyf.common.common.app.PresenterFragment;
@@ -13,8 +14,10 @@ import com.zyf.factory.presenter.shop.Presenter_shop;
 import com.zyf.simplemvp.R;
 import com.zyf.simplemvp.fragment.MPagerAdapter;
 import com.zyf.simplemvp.fragment.shop.frag_shop_inner.Fragment_shop_inner;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import butterknife.BindView;
 
 /**
@@ -56,7 +59,7 @@ public class Fragment_shop extends PresenterFragment<Contract_shop.Presenter> im
         titles.add("湘菜");
         titles.add("汤粥");
         titles.add("其他");
-        for (String s:titles) {
+        for (String s : titles) {
             items.add(Fragment_shop_inner.newInstance(s));
         }
 

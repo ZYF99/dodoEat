@@ -1,9 +1,10 @@
-package com.zyf.simplemvp.fragment.frag_homepage_inner;
+package com.zyf.simplemvp.fragment.personal.frag_personal_inner;
 
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
@@ -11,29 +12,37 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.zyf.common.common.app.PresenterFragment;
 import com.zyf.factory.model.homepage.Dynamic;
-import com.zyf.factory.presenter.homepage.inner.Presenter_homepage_inner;
 import com.zyf.factory.presenter.inner.Contract_fragment_innerList;
+import com.zyf.factory.presenter.personal.inner.Presenter_personal_inner;
+import com.zyf.factory.presenter.shop.inner.Presenter_shop_inner;
 import com.zyf.simplemvp.R;
 import com.zyf.simplemvp.activity.DynamicActivity;
+import com.zyf.simplemvp.activity.ShopActivity;
+import com.zyf.simplemvp.fragment.homepage.frag_homepage_inner.DynamicRecyclerAdapter;
+import com.zyf.simplemvp.fragment.shop.frag_shop_inner.ShopRecyclerAdapter;
+
 import net.qiujuer.genius.kit.handler.Run;
 import net.qiujuer.genius.kit.handler.runable.Action;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
 import butterknife.BindView;
 
 
-public class Fragment_homepage_inner extends PresenterFragment<Contract_fragment_innerList.Presenter>
-        implements Contract_fragment_innerList.View<Dynamic>, DynamicRecyclerAdapter.Listener, OnRefreshListener {
+public class Fragment_personal_inner extends PresenterFragment<Contract_fragment_innerList.Presenter>
+        implements Contract_fragment_innerList.View<Dynamic>, OnRefreshListener, PersonalDynamicRecyclerAdapter.Listener {
 
-    String TAG = "Fragment_homepage_inner";
-    //本页面的类型（关注，发现，附近）
+    String TAG = "Fragment_personal_inner";
+    //本页面的类型（笔记，收藏，赞过）
     protected String type;
 
     @BindView(R.id.refreshLayout)
@@ -43,21 +52,24 @@ public class Fragment_homepage_inner extends PresenterFragment<Contract_fragment
     RecyclerView recyclerView;
 
 
-    DynamicRecyclerAdapter dynamicRecyclerAdapter;
+    //DynamicRecyclerAdapter dynamicRecyclerAdapter;
+    PersonalDynamicRecyclerAdapter personalDynamicRecyclerAdapter;
     List<Dynamic> list = new ArrayList<>();
 
-    public Fragment_homepage_inner() {
+    public Fragment_personal_inner() {
+
 
     }
 
-    public static Fragment_homepage_inner newInstance(String type) {
+    public static Fragment_personal_inner newInstance(String type) {
+
         //放入参数
         Bundle args = new Bundle();
         args.putString("type", type);
         //根据传入type类型新建一个首页内部的Fragment然后返给首页
-        Fragment_homepage_inner fragment_shop_inner = new Fragment_homepage_inner();
-        fragment_shop_inner.setArguments(args);
-        return fragment_shop_inner;
+        Fragment_personal_inner fragment_personal_inner = new Fragment_personal_inner();
+        fragment_personal_inner.setArguments(args);
+        return fragment_personal_inner;
     }
 
     @Override
@@ -79,9 +91,9 @@ public class Fragment_homepage_inner extends PresenterFragment<Contract_fragment
         //初始化recyclerview列表
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(staggeredGridLayoutManager);
-        dynamicRecyclerAdapter = new DynamicRecyclerAdapter(R.layout.cell_homepage_inner, list, this);
-        dynamicRecyclerAdapter.bindToRecyclerView(recyclerView);
-        dynamicRecyclerAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
+        personalDynamicRecyclerAdapter = new PersonalDynamicRecyclerAdapter(R.layout.cell_dynamic, list, this);
+        personalDynamicRecyclerAdapter.bindToRecyclerView(recyclerView);
+        personalDynamicRecyclerAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         refreshLayout.setOnRefreshListener(this);
     }
 
@@ -102,7 +114,6 @@ public class Fragment_homepage_inner extends PresenterFragment<Contract_fragment
     @Override
     protected void initData() {
         super.initData();
-
     }
 
     /**
@@ -117,7 +128,7 @@ public class Fragment_homepage_inner extends PresenterFragment<Contract_fragment
     //返回此Presenter_homepage_inner的实体类对象，并告诉它我们的列表数据类型（关注or发现or附近）
     @Override
     protected Contract_fragment_innerList.Presenter initPresenter() {
-        return new Presenter_homepage_inner(this, type);
+        return new Presenter_personal_inner(this, type);
     }
 
 
@@ -131,7 +142,7 @@ public class Fragment_homepage_inner extends PresenterFragment<Contract_fragment
             @Override
             public void call() {
                 Log.d(TAG, "刷新回调");
-                dynamicRecyclerAdapter.replaceData(newList);
+                personalDynamicRecyclerAdapter.replaceData(newList);
                 refreshLayout.finishRefresh();
             }
         });
@@ -140,20 +151,20 @@ public class Fragment_homepage_inner extends PresenterFragment<Contract_fragment
     //从服务器加载更多动态列表数据后的回调
     @Override
     public void onLoadMoreListDown(List<Dynamic> newList) {
-            Run.onUiAsync(new Action() {
-                @Override
-                public void call() {
-                    Log.d(TAG, "加载回调");
-                    if (newList.size() > 0) {
-                        dynamicRecyclerAdapter.addData(newList);
-                        dynamicRecyclerAdapter.loadMoreComplete();
+        Run.onUiAsync(new Action() {
+            @Override
+            public void call() {
+                Log.d(TAG, "加载回调");
+                if (newList.size() > 0) {
+                    personalDynamicRecyclerAdapter.addData(newList);
+                    personalDynamicRecyclerAdapter.loadMoreComplete();
 
-                    } else {
-                        dynamicRecyclerAdapter.loadMoreEnd();
-                    }
-
+                } else {
+                    personalDynamicRecyclerAdapter.loadMoreEnd();
                 }
-            });
+
+            }
+        });
     }
 
 
@@ -167,17 +178,27 @@ public class Fragment_homepage_inner extends PresenterFragment<Contract_fragment
         DynamicActivity.show(Objects.requireNonNull(getContext()), intent);
     }
 
+
     //长按了单项卡片
     @Override
     public void onCellLongClick(int position) {
 
     }
 
-    //点击了爱心
     @Override
     public void onHeartClick(View heartView, int position) {
         list.get(position).setLike(true);
         showHeartAnim(heartView);
+    }
+
+    //爱心动画
+    void showHeartAnim(View heartView) {
+        Animation heart_in = AnimationUtils.loadAnimation(getContext(), R.anim.anim_scale_in);
+        Animation heart_out = AnimationUtils.loadAnimation(getContext(), R.anim.anim_scale_out);
+        heartView.startAnimation(heart_in);
+
+        ((ImageView) heartView).setImageResource(R.drawable.ic_heart_pressed);
+        heartView.startAnimation(heart_out);
     }
 
     //触发了上拉加载(来源Brvha)
@@ -195,15 +216,7 @@ public class Fragment_homepage_inner extends PresenterFragment<Contract_fragment
         mPresenter.refreshList();
     }
 
-    //爱心动画
-    void showHeartAnim(View heartView) {
-        Animation heart_in = AnimationUtils.loadAnimation(getContext(), R.anim.anim_scale_in);
-        Animation heart_out = AnimationUtils.loadAnimation(getContext(), R.anim.anim_scale_out);
-        heartView.startAnimation(heart_in);
 
-        ((ImageView) heartView).setImageResource(R.drawable.ic_heart_pressed);
-        heartView.startAnimation(heart_out);
-    }
 
 
 }

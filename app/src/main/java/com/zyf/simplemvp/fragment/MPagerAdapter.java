@@ -1,5 +1,6 @@
 package com.zyf.simplemvp.fragment;
 
+
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import com.zyf.common.common.app.Fragment;
@@ -24,6 +25,7 @@ public class MPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int i) {
         return items.get(i);
     }
+
 
     @Override
     public int getCount() {

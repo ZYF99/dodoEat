@@ -23,7 +23,6 @@
             android:id="@+id/line_indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:paddingBottom="@dimen/len_4"
             android:background="#fff"
             android:gravity="center"

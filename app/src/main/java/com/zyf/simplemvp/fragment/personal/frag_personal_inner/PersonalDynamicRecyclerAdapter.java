@@ -1,10 +1,11 @@
-package com.zyf.simplemvp.fragment.frag_homepage_inner;
+package com.zyf.simplemvp.fragment.personal.frag_personal_inner;
 
 
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -13,11 +14,11 @@ import com.zyf.simplemvp.R;
 
 import java.util.List;
 
-public class DynamicRecyclerAdapter extends BaseQuickAdapter<Dynamic, BaseViewHolder> {
+public class PersonalDynamicRecyclerAdapter extends BaseQuickAdapter<Dynamic, BaseViewHolder> {
 
     private Listener listener;
 
-    public DynamicRecyclerAdapter(int layoutResId, @Nullable List<Dynamic> data, Listener listener) {
+    public PersonalDynamicRecyclerAdapter(int layoutResId, @Nullable List<Dynamic> data, Listener listener) {
         super(layoutResId, data);
         this.listener = listener;
     }
@@ -77,7 +78,7 @@ public class DynamicRecyclerAdapter extends BaseQuickAdapter<Dynamic, BaseViewHo
 
 
     //cell的监听器
-    interface Listener extends RequestLoadMoreListener {
+    public interface Listener extends RequestLoadMoreListener {
 
         void onCellClick(int position);
 

@@ -3,6 +3,7 @@ package com.zyf.simplemvp.fragment.homepage;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;
+
 import com.zhengsr.viewpagerlib.indicator.TabIndicator;
 import com.zhengsr.viewpagerlib.view.GlideViewPager;
 import com.zyf.common.common.app.Fragment;
@@ -11,9 +12,12 @@ import com.zyf.factory.presenter.homepage.Presenter_homepage;
 import com.zyf.factory.presenter.homepage.Contract_homepage;
 import com.zyf.simplemvp.R;
 import com.zyf.simplemvp.fragment.MPagerAdapter;
-import com.zyf.simplemvp.fragment.frag_homepage_inner.Fragment_homepage_inner;
+import com.zyf.simplemvp.fragment.homepage.frag_homepage_inner.Fragment_homepage_inner;
+import com.zyf.simplemvp.fragment.shop.frag_shop_inner.Fragment_shop_inner;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import butterknife.BindView;
 
 
@@ -34,17 +38,20 @@ public class Fragment_homepage extends PresenterFragment<Contract_homepage.Prese
         super.initWidget(root);
 
         //顶部指示器列表
-        List<Fragment> items = new ArrayList<>();
-        items.add(Fragment_homepage_inner.newInstance("关注"));
-        items.add(Fragment_homepage_inner.newInstance("发现"));
-        items.add(Fragment_homepage_inner.newInstance("附近"));
         List<String> titles = new ArrayList<>();
+
+        //Fragment实体
+        List<com.zyf.common.common.app.Fragment> items = new ArrayList<>();
         titles.add("关注");
         titles.add("发现");
         titles.add("附近");
+        for (String s : titles) {
+            items.add(Fragment_homepage_inner.newInstance(s));
+        }
+
 
         //ViewPager设置
-        MPagerAdapter mPagerAdapter = new MPagerAdapter(getFragmentManager(),items);
+        MPagerAdapter mPagerAdapter = new MPagerAdapter(getFragmentManager(), items);
         viewPager.addOnPageChangeListener(this);
         viewPager.setAdapter(mPagerAdapter);
         viewPager.setCurrentItem(0);
@@ -79,21 +86,19 @@ public class Fragment_homepage extends PresenterFragment<Contract_homepage.Prese
     }
 
 
-
-
-
-
     //本页的Viewpager的监听回调
     @Override
     public void onPageScrolled(int i, float v, int i1) {
 
     }
+
     @Override
     public void onPageSelected(int i) {
 
     }
+
     @Override
     public void onPageScrollStateChanged(int i) {
-        
+
     }
 }
