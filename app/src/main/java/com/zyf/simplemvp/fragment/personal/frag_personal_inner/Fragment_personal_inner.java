@@ -1,13 +1,18 @@
 package com.zyf.simplemvp.fragment.personal.frag_personal_inner;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -18,6 +23,7 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.zyf.common.common.app.PresenterFragment;
+import com.zyf.common.common.widget.StickyScrollView;
 import com.zyf.factory.model.homepage.Dynamic;
 import com.zyf.factory.presenter.inner.Contract_fragment_innerList;
 import com.zyf.factory.presenter.personal.inner.Presenter_personal_inner;
@@ -26,6 +32,7 @@ import com.zyf.simplemvp.R;
 import com.zyf.simplemvp.activity.DynamicActivity;
 import com.zyf.simplemvp.activity.ShopActivity;
 import com.zyf.simplemvp.fragment.homepage.frag_homepage_inner.DynamicRecyclerAdapter;
+import com.zyf.simplemvp.fragment.personal.Fragment_personal;
 import com.zyf.simplemvp.fragment.shop.frag_shop_inner.ShopRecyclerAdapter;
 
 import net.qiujuer.genius.kit.handler.Run;
@@ -45,12 +52,14 @@ public class Fragment_personal_inner extends PresenterFragment<Contract_fragment
     //本页面的类型（笔记，收藏，赞过）
     protected String type;
 
+    StickyScrollView stickyScrollView;
+
     @BindView(R.id.refreshLayout)
     SmartRefreshLayout refreshLayout;
 
     @BindView(R.id.inner_recycler)
+    public
     RecyclerView recyclerView;
-
 
     //DynamicRecyclerAdapter dynamicRecyclerAdapter;
     PersonalDynamicRecyclerAdapter personalDynamicRecyclerAdapter;
@@ -85,16 +94,23 @@ public class Fragment_personal_inner extends PresenterFragment<Contract_fragment
     /**
      * 初始化控件
      */
+    @SuppressLint("NewApi")
     @Override
     protected void initWidget(View root) {
         super.initWidget(root);
+        stickyScrollView = LayoutInflater.from(getContext()).inflate(R.layout.fragment_personal,null).findViewById(R.id.stickyscrollview);
         //初始化recyclerview列表
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(staggeredGridLayoutManager);
+        recyclerView.setNestedScrollingEnabled(false);
         personalDynamicRecyclerAdapter = new PersonalDynamicRecyclerAdapter(R.layout.cell_dynamic, list, this);
         personalDynamicRecyclerAdapter.bindToRecyclerView(recyclerView);
         personalDynamicRecyclerAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         refreshLayout.setOnRefreshListener(this);
+
+
+
+
     }
 
 

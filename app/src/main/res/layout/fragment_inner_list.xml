@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,7 +35,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/listBackground"
-            android:overScrollMode="never">
+            android:overScrollMode="never"
+            android:paddingLeft="@dimen/len_6"
+            android:paddingTop="@dimen/len_2"
+            android:paddingRight="@dimen/len_6">
 
         </android.support.v7.widget.RecyclerView>
 
@@ -41,4 +48,4 @@
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
