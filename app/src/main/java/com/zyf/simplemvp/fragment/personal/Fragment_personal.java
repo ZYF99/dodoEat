@@ -1,15 +1,10 @@
 package com.zyf.simplemvp.fragment.personal;
 
 
-import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Intent;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.NestedScrollView;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -20,7 +15,7 @@ import com.zyf.common.common.widget.StickyScrollView;
 import com.zyf.factory.presenter.personal.Contract_personal;
 import com.zyf.factory.presenter.personal.Presenter_personal;
 import com.zyf.simplemvp.R;
-import com.zyf.simplemvp.activity.FansActivity;
+import com.zyf.simplemvp.activity.fans.FansActivity;
 import com.zyf.simplemvp.fragment.MPagerAdapter;
 import com.zyf.simplemvp.fragment.personal.frag_personal_inner.Fragment_personal_inner;
 

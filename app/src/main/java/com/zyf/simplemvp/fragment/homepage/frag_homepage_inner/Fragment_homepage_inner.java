@@ -16,11 +16,12 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.zyf.common.common.app.PresenterFragment;
-import com.zyf.factory.model.homepage.Dynamic;
+import com.zyf.factory.model.dynamic.Dynamic;
 import com.zyf.factory.presenter.homepage.inner.Presenter_homepage_inner;
 import com.zyf.factory.presenter.inner.Contract_fragment_innerList;
 import com.zyf.simplemvp.R;
-import com.zyf.simplemvp.activity.DynamicActivity;
+import com.zyf.simplemvp.activity.Detail_DynamicActivity;
+
 import net.qiujuer.genius.kit.handler.Run;
 import net.qiujuer.genius.kit.handler.runable.Action;
 import java.util.ArrayList;
@@ -162,9 +163,9 @@ public class Fragment_homepage_inner extends PresenterFragment<Contract_fragment
     //点击了单项卡片
     @Override
     public void onCellClick(int position) {
-        Intent intent = new Intent(getContext(), DynamicActivity.class);
+        Intent intent = new Intent(getContext(), Detail_DynamicActivity.class);
         intent.putExtra("dynamic_data", list.get(position));
-        DynamicActivity.show(Objects.requireNonNull(getContext()), intent);
+        Detail_DynamicActivity.show(Objects.requireNonNull(getContext()), intent);
     }
 
     //长按了单项卡片

@@ -3,12 +3,8 @@ package com.zyf.simplemvp.fragment.personal.frag_personal_inner;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.v4.widget.NestedScrollView;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
@@ -24,16 +20,11 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.zyf.common.common.app.PresenterFragment;
 import com.zyf.common.common.widget.StickyScrollView;
-import com.zyf.factory.model.homepage.Dynamic;
+import com.zyf.factory.model.dynamic.Dynamic;
 import com.zyf.factory.presenter.inner.Contract_fragment_innerList;
 import com.zyf.factory.presenter.personal.inner.Presenter_personal_inner;
-import com.zyf.factory.presenter.shop.inner.Presenter_shop_inner;
 import com.zyf.simplemvp.R;
-import com.zyf.simplemvp.activity.DynamicActivity;
-import com.zyf.simplemvp.activity.ShopActivity;
-import com.zyf.simplemvp.fragment.homepage.frag_homepage_inner.DynamicRecyclerAdapter;
-import com.zyf.simplemvp.fragment.personal.Fragment_personal;
-import com.zyf.simplemvp.fragment.shop.frag_shop_inner.ShopRecyclerAdapter;
+import com.zyf.simplemvp.activity.Detail_DynamicActivity;
 
 import net.qiujuer.genius.kit.handler.Run;
 import net.qiujuer.genius.kit.handler.runable.Action;
@@ -189,9 +180,9 @@ public class Fragment_personal_inner extends PresenterFragment<Contract_fragment
     //点击了单项卡片
     @Override
     public void onCellClick(int position) {
-        Intent intent = new Intent(getContext(), DynamicActivity.class);
+        Intent intent = new Intent(getContext(), Detail_DynamicActivity.class);
         intent.putExtra("dynamic_data", list.get(position));
-        DynamicActivity.show(Objects.requireNonNull(getContext()), intent);
+        Detail_DynamicActivity.show(Objects.requireNonNull(getContext()), intent);
     }
 
 

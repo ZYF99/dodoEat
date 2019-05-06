@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.zyf.factory.model.homepage.Dynamic;
+import com.zyf.factory.model.dynamic.Dynamic;
 import com.zyf.simplemvp.R;
 
 import java.util.List;

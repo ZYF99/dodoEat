@@ -3,11 +3,8 @@ package com.zyf.factory.presenter.personal.inner;
 
 import com.zyf.common.factory.data.base.DataSource;
 import com.zyf.factory.data.helper.DynamicHelper;
-import com.zyf.factory.data.helper.ShopHelper;
-import com.zyf.factory.model.homepage.Dynamic;
-import com.zyf.factory.model.homepage.RequestModel_getDynamicList;
-import com.zyf.factory.model.shop.RequestModel_getShopList;
-import com.zyf.factory.model.shop.Shop;
+import com.zyf.factory.model.dynamic.Dynamic;
+import com.zyf.factory.model.dynamic.RequestModel_getDynamicList;
 import com.zyf.factory.presenter.inner.Contract_fragment_innerList;
 import com.zyf.factory.presenter.inner.Presenter_fragment_innerList;
 

@@ -3,8 +3,8 @@ package com.zyf.factory.data.helper;
 
 import com.zyf.common.factory.data.base.DataSource;
 import com.zyf.factory.model.homepage.Author;
-import com.zyf.factory.model.homepage.Dynamic;
-import com.zyf.factory.model.homepage.RequestModel_getDynamicList;
+import com.zyf.factory.model.dynamic.Dynamic;
+import com.zyf.factory.model.dynamic.RequestModel_getDynamicList;
 import java.util.ArrayList;
 import java.util.List;
 

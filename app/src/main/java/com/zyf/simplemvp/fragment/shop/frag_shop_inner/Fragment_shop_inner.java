@@ -17,7 +17,7 @@ import com.zyf.factory.model.shop.Shop;
 import com.zyf.factory.presenter.inner.Contract_fragment_innerList;
 import com.zyf.factory.presenter.shop.inner.Presenter_shop_inner;
 import com.zyf.simplemvp.R;
-import com.zyf.simplemvp.activity.ShopActivity;
+import com.zyf.simplemvp.activity.Detail_ShopActivity;
 import net.qiujuer.genius.kit.handler.Run;
 import net.qiujuer.genius.kit.handler.runable.Action;
 import java.util.ArrayList;
@@ -165,10 +165,10 @@ public class Fragment_shop_inner extends PresenterFragment<Contract_fragment_inn
     //点击了单项卡片
     @Override
     public void onCellClick(int position) {
-        Intent intent = new Intent(getContext(), ShopActivity.class);
+        Intent intent = new Intent(getContext(), Detail_ShopActivity.class);
         intent.putExtra("shop_data", list.get(position));
-        ShopActivity.show(Objects.requireNonNull(getContext()), intent);
-        //DynamicActivity.show(Objects.requireNonNull(getContext()), intent);
+        Detail_ShopActivity.show(Objects.requireNonNull(getContext()), intent);
+        //Detail_DynamicActivity.show(Objects.requireNonNull(getContext()), intent);
     }
 
     //长按了单项卡片

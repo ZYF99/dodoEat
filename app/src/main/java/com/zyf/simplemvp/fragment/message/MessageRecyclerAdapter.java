@@ -24,8 +24,8 @@ import java.util.List;
     protected void convert(BaseViewHolder helper, Message item) {
 
         Glide.with(mContext).load(item.getIconUrl()).into((ImageView) (helper.getView(R.id.cell_msg_icon)));
-        helper.setText(R.id.cell_msg_title,item.getTitle());
-        helper.setText(R.id.cell_msg_msg,item.getMsg());
+        helper.setText(R.id.cell_fans_name,item.getTitle());
+        helper.setText(R.id.cell_fans_btn,item.getMsg());
         helper.setText(R.id.cell_msg_time,item.getTime());
 
         //单项点击事件

@@ -1,30 +1,45 @@
 package com.zyf.factory.data.helper;
 
 import com.zyf.common.factory.data.base.DataSource;
-import com.zyf.factory.model.message.Message;
-import com.zyf.factory.model.message.RequestModel_getMessageList;
-
+import com.zyf.factory.model.fans.Fans;
+import com.zyf.factory.model.fans.RequestModel_getFansList;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MessageHelper {
+public class FansHelper {
 
     /**
      * @param model    传递一个fun1 model的接口
      * @param callback 成功与失败的接口回送
      */
-    public static void getList(final RequestModel_getMessageList model, final DataSource.Callback<List<Message>> callback) {
+    public static void getList(final RequestModel_getFansList model, final DataSource.Callback<List<Fans>> callback) {
         //调用Retrofit对我们的网络请求接口做代理
         //RemoteService service = NetWork.remote();
 
-
         //模拟网络获取了数据
-        List<Message> list = new ArrayList<>();
-        Message message = new Message("https://avatar.csdn.net/C/7/9/3_b1412.jpg","吃货成都","吃在中国，味在四川","14:20");
-        list.add(message);
-        list.add(message);
-        list.add(message);
+        List<Fans> list = new ArrayList<>();
 
+        Fans fans = new Fans("https://youimg1.c-ctrip.com/target/10020s000000hxqgv3498_R_671_10000_Q90.jpg?proc=autoorient","娜娜",true);
+        list.add(fans);
+        list.add(fans);
+        list.add(fans);
+        list.add(fans);
+        list.add(fans);
+        list.add(fans);
+        list.add(fans);
+        list.add(fans);
+        list.add(fans);
+        list.add(fans);
+        list.add(fans);
+        list.add(fans);
+        list.add(fans);
+        list.add(fans);
+        list.add(fans);
+        list.add(fans);
+        list.add(fans);
+        list.add(fans);
+        list.add(fans);
+        list.add(fans);
 
         callback.onDataLoaded(list);
         /*
@@ -52,4 +67,5 @@ public class MessageHelper {
 
 
     }
+
 }

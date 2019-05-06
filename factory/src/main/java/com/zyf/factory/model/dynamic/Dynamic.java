@@ -1,5 +1,7 @@
-package com.zyf.factory.model.homepage;
+package com.zyf.factory.model.dynamic;
 
+
+import com.zyf.factory.model.homepage.Author;
 
 import java.io.Serializable;
 import java.util.List;

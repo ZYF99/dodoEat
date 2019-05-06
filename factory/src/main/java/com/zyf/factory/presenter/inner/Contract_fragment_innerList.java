@@ -1,7 +1,6 @@
 package com.zyf.factory.presenter.inner;
 
 import com.zyf.common.factory.presenter.base.BaseContract;
-import com.zyf.factory.model.homepage.Dynamic;
 
 import java.util.List;
 

@@ -1,61 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zyf.common.common.widget.StickyScrollView
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_marginTop="@dimen/statusBarSize"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/inner_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_marginTop="@dimen/actionBarWithStatusBarSizeWithShadow"
+        android:layout_weight="1"
+        android:background="@color/listBackground"
+        android:overScrollMode="never"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/holo_red_light"
-            android:tag="sticky"
-            android:text="姓名"
-            android:textColor="@android:color/white" />
+    </android.support.v7.widget.RecyclerView>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:background="@android:color/holo_blue_bright"
-            android:gravity="center"
-            android:text="zhang phil"
-            android:textColor="@android:color/white" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/holo_red_light"
-            android:tag="sticky"
-            android:text="blog"
-            android:textColor="@android:color/white" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:background="@android:color/holo_orange_light"
-            android:gravity="center"
-            android:text="zhang phil csdn blog"
-            android:textColor="@android:color/white" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/holo_red_light"
-            android:tag="sticky"
-            android:text="链接"
-            android:textColor="@android:color/white" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:background="@android:color/holo_purple"
-            android:gravity="center"
-            android:text="http://blog.csdn.net/zhangphil"
-            android:textColor="@android:color/white" />
-    </LinearLayout>
-</com.zyf.common.common.widget.StickyScrollView>
+</android.support.constraint.ConstraintLayout>

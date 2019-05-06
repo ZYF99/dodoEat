@@ -9,14 +9,16 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import com.bumptech.glide.Glide;
-import com.zyf.common.common.app.Activity;
+import com.zyf.common.common.app.PresenterActivity;
 import com.zyf.factory.model.shop.Shop;
+import com.zyf.factory.presenter.detail_shop.Contract_DetailShop;
+import com.zyf.factory.presenter.detail_shop.Presenter_DetailShop;
 import com.zyf.simplemvp.R;
 import butterknife.BindView;
 import butterknife.OnClick;
 
 
-public class ShopActivity extends Activity {
+public class Detail_ShopActivity extends PresenterActivity<Contract_DetailShop.Presenter> implements Contract_DetailShop.View {
     @BindView(R.id.collapsingToolbar)
     CollapsingToolbarLayout collapsingToolbarLayout;
     @BindView(R.id.shop_bg)
@@ -30,6 +32,8 @@ public class ShopActivity extends Activity {
     Shop shop;
     RecyclerAdapter_food adapter;
 
+
+    //得到布局Id
     @Override
     protected int getContentLayoutId() {
         return R.layout.activity_shop;
@@ -40,6 +44,9 @@ public class ShopActivity extends Activity {
         context.startActivity(intent);
     }
 
+
+
+    //初始化控件之前
     @Override
     protected void initBefore() {
         super.initBefore();
@@ -47,6 +54,8 @@ public class ShopActivity extends Activity {
         shop = (Shop) getIntent().getSerializableExtra("shop_data");
     }
 
+
+    //初始化控件
     @Override
     protected void initWidget() {
         super.initWidget();
@@ -54,9 +63,18 @@ public class ShopActivity extends Activity {
         collapsingToolbarLayout.setTitle(shop.getName());
         collapsingToolbarLayout.setContentScrimColor(Color.argb(200, 0, 0, 0));
         Glide.with(this).load(shop.getIconUrl()).into(iv_bg);
-        recyclerView.setLayoutManager(new LinearLayoutManager(ShopActivity.this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(Detail_ShopActivity.this));
         adapter = new RecyclerAdapter_food(R.layout.cell_food, shop.getFoods());
         recyclerView.setAdapter(adapter);
+    }
+
+
+
+
+    //特有方法
+    @Override
+    public void fun1Callback() {
+
     }
 
 
@@ -66,5 +84,9 @@ public class ShopActivity extends Activity {
         finish();
     }
 
-
+    //初始化Presenter
+    @Override
+    public Contract_DetailShop.Presenter initPresenter() {
+        return new Presenter_DetailShop(this);
+    }
 }

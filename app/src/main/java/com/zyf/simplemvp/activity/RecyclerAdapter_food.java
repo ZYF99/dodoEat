@@ -19,7 +19,7 @@ public class RecyclerAdapter_food extends BaseQuickAdapter<Shop.Food, BaseViewHo
 
     @Override
     protected void convert(BaseViewHolder helper, Shop.Food item) {
-        helper.setText(R.id.cell_msg_title, item.getName());
+        helper.setText(R.id.cell_fans_name, item.getName());
         helper.setText(R.id.cell_msg_time,item.getCost()+"RMB");
         //食物图片加载
         Glide.with(mContext).load(item.getImgUrl()).into((ImageView) helper.getView(R.id.cell_msg_icon));

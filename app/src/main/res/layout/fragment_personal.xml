@@ -21,20 +21,20 @@
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/len_40"
+                android:layout_height="@dimen/len_44"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
 
                 <ImageView
                     android:id="@+id/personal_func"
-                    android:layout_width="@dimen/len_16"
-                    android:layout_height="@dimen/len_16"
+                    android:layout_width="@dimen/len_20"
+                    android:layout_height="@dimen/len_20"
                     android:layout_marginStart="16dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/ic_func"
                     android:tint="@color/textSecond"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/view"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,7 +48,7 @@
                     android:gravity="center"
                     android:text="name"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/font_14"
+                    android:textSize="@dimen/font_16"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -58,14 +58,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/len_4"
+                    android:layout_marginTop="2dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="吃货号：88888888"
                     android:textColor="@color/textSecond"
                     android:textSize="@dimen/font_10"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/personal_name" />
@@ -395,7 +394,7 @@
                         app:tab_width="@dimen/len_16"
                         app:tap_type="rect"
                         app:visiabel_size="3"
-                        tools:background="@color/green_a100">
+                        tools:background="@color/blue_50">
 
                     </com.zhengsr.viewpagerlib.indicator.TabIndicator>
 
@@ -417,7 +416,7 @@
                 android:id="@+id/personal_viewpager"
                 android:layout_width="match_parent"
                 android:layout_height="800dp"
-                android:background="@color/green_300"
+                android:background="@color/blue_200"
                 android:overScrollMode="never">
 
             </com.zhengsr.viewpagerlib.view.GlideViewPager>

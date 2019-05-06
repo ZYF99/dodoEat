@@ -8,13 +8,13 @@
     <!--状态栏高度-->
     <dimen name="statusBarSize">25dp</dimen>
     <!--标题栏高度-->
-    <dimen name="actionBarSize">48dp</dimen>
+    <dimen name="actionBarSize">42dp</dimen>
     <!--标题栏及阴影高度-->
-    <dimen name="actionBarSizeWithShadow">49dp</dimen>
+    <dimen name="actionBarSizeWithShadow">43dp</dimen>
     <!--状态栏和标题栏高度一起-->
-    <dimen name="actionBarWithStatusBarSize">73dp</dimen>
+    <dimen name="actionBarWithStatusBarSize">67dp</dimen>
     <!--状态栏和标题栏及阴影高度一起-->
-    <dimen name="actionBarWithStatusBarSizeWithShadow">74dp</dimen>
+    <dimen name="actionBarWithStatusBarSizeWithShadow">68dp</dimen>
 
     <!--名字字体的大小-->
     <dimen name="fontNameSize">15sp</dimen>

@@ -1,4 +1,4 @@
-package com.zyf.factory.model.homepage;
+package com.zyf.factory.model.dynamic;
 
 
 /**

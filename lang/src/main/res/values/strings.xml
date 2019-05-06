@@ -4,4 +4,8 @@
     <string name="page2">店铺</string>
     <string name="page3">消息</string>
     <string name="page4">我的</string>
+    <string name="fans">我的粉丝</string>
+    <string name="myFollowing">我关注的</string>
+    <string name="cancleFollow">脱粉</string>
+    <string name="following">回粉</string>
 </resources>

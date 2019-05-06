@@ -2,8 +2,8 @@ package com.zyf.factory.presenter.homepage.inner;
 
 
 import com.zyf.factory.data.helper.DynamicHelper;
-import com.zyf.factory.model.homepage.Dynamic;
-import com.zyf.factory.model.homepage.RequestModel_getDynamicList;
+import com.zyf.factory.model.dynamic.Dynamic;
+import com.zyf.factory.model.dynamic.RequestModel_getDynamicList;
 import com.zyf.factory.presenter.inner.Contract_fragment_innerList;
 import com.zyf.factory.presenter.inner.Presenter_fragment_innerList;
 

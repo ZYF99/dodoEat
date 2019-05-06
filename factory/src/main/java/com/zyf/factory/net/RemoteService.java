@@ -1,8 +1,8 @@
 package com.zyf.factory.net;
 
 import com.zyf.factory.model.RspModel;
-import com.zyf.factory.model.homepage.Dynamic;
-import com.zyf.factory.model.homepage.RequestModel_getDynamicList;
+import com.zyf.factory.model.dynamic.Dynamic;
+import com.zyf.factory.model.dynamic.RequestModel_getDynamicList;
 
 import java.util.List;
 

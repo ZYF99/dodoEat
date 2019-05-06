@@ -3,7 +3,7 @@
     <!--基础主色-->
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#FFFFFF</color>
-    <color name="colorAccent">#FF5722</color>
+    <color name="colorAccent">#FA003A</color>
     <color name="colorLight">@color/white</color>
     <color name="colorDark">@color/black</color>
     <color name="colorAccentAlpha">#801572fc</color>
