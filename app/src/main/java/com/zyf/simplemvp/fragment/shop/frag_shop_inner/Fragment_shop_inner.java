@@ -17,7 +17,7 @@ import com.zyf.factory.model.shop.Shop;
 import com.zyf.factory.presenter.inner.Contract_fragment_innerList;
 import com.zyf.factory.presenter.shop.inner.Presenter_shop_inner;
 import com.zyf.simplemvp.R;
-import com.zyf.simplemvp.activity.Detail_ShopActivity;
+import com.zyf.simplemvp.activity.shop.Detail_ShopActivity;
 import net.qiujuer.genius.kit.handler.Run;
 import net.qiujuer.genius.kit.handler.runable.Action;
 import java.util.ArrayList;

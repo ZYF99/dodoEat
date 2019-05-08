@@ -253,8 +253,7 @@
                         android:id="@+id/btn_sex"
                         android:layout_width="@dimen/len_12"
                         android:layout_height="@dimen/len_12"
-                        android:src="@drawable/ic_sex"
-                        android:tint="@color/blue_500"
+                        android:src="@drawable/ic_sex_boy"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -402,7 +401,7 @@
                         android:id="@+id/gang_3"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginTop="1dp"
+                        android:layout_marginTop="@dimen/len_4"
                         android:background="@drawable/tool_bar_shadow"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

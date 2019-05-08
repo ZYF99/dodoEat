@@ -30,7 +30,7 @@
 
 
         <TextView
-            android:id="@+id/cell_fans_name"
+            android:id="@+id/cell_person_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -44,7 +44,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/cell_fans_btn"
+            android:id="@+id/cell_person_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -57,7 +57,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/cell_msg_time"
             app:layout_constraintStart_toEndOf="@+id/cell_msg_icon"
-            app:layout_constraintTop_toBottomOf="@+id/cell_fans_name" />
+            app:layout_constraintTop_toBottomOf="@+id/cell_person_name" />
 
         <TextView
             android:id="@+id/cell_msg_time"
@@ -79,7 +79,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/tool_bar_shadow"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cell_fans_btn" />
+            app:layout_constraintTop_toBottomOf="@+id/cell_person_btn" />
 
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

@@ -32,7 +32,7 @@
             app:srcCompat="@drawable/default_banner_chat" />
 
         <TextView
-            android:id="@+id/cell_fans_name"
+            android:id="@+id/cell_person_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

@@ -48,7 +48,7 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
         super.initWidget();
         //状态栏字体黑色
         StatusBarUtil.setStatusTextColor(true,this);
-        //初始化主活动的ViewPager（首页，消息，我的三个大功能界面）
+        //初始化主活动的ViewPager（首页，店铺，消息，我的三个大功能界面）
         initViewPager();
 
 /*        //toolbar背景初始化

@@ -1,4 +1,4 @@
-package com.zyf.simplemvp.activity.fans;
+package com.zyf.simplemvp.activity.following;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +16,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class FansActivity extends PresenterActivity<Contract_fans.Presenter> implements Contract_fans.View {
+public class FollowingActivity extends PresenterActivity<Contract_fans.Presenter> implements Contract_fans.View {
 
     @BindView(R.id.toolbar_title)
     TextView tv_title;
@@ -25,8 +25,8 @@ public class FansActivity extends PresenterActivity<Contract_fans.Presenter> imp
     @BindView(R.id.inner_recycler)
     RecyclerView recyclerView;
 
-    FansRecyclerAdapter adapter;
-    List<Person>list_fans = new ArrayList<>();
+    FollowingRecyclerAdapter adapter;
+    List<Person>list_following = new ArrayList<>();
 
     //点击返回
     @OnClick(R.id.toolbar_back)
@@ -50,8 +50,8 @@ public class FansActivity extends PresenterActivity<Contract_fans.Presenter> imp
     @Override
     protected void initWidget() {
         super.initWidget();
-        tv_title.setText(R.string.myfans);
-        adapter = new FansRecyclerAdapter(R.layout.cell_person,list_fans);
+        tv_title.setText(R.string.myFollowing);
+        adapter = new FollowingRecyclerAdapter(R.layout.cell_person,list_following);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
     }
@@ -63,7 +63,7 @@ public class FansActivity extends PresenterActivity<Contract_fans.Presenter> imp
         mPresenter.refreshList();
     }
 
-    //特有方法
+    //关注列表获取成功回调
     @Override
     public void onRefreshDone(List<Person>list) {
         adapter.replaceData(list);

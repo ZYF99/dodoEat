@@ -13,7 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Main"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.fans.FansActivity"></activity>
+        <activity android:name=".activity.following.FollowingActivity">
+
+        </activity>
+        <activity android:name=".activity.fans.FansActivity">
+
+        </activity>
+
         <activity
             android:name=".activity.LaunchActivity"
             android:label="@string/app_name"
@@ -24,7 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.Detail_ShopActivity"></activity>
+        <activity android:name=".activity.shop.Detail_ShopActivity"></activity>
         <activity
             android:name=".activity.Detail_DynamicActivity"
             android:launchMode="standard"></activity>

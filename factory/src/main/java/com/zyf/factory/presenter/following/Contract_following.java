@@ -1,14 +1,14 @@
-package com.zyf.factory.presenter.fans;
+package com.zyf.factory.presenter.following;
 
 import com.zyf.common.factory.presenter.base.BaseContract;
 import com.zyf.factory.model.Person;
 
 import java.util.List;
 
-public interface Contract_fans {
+public interface Contract_following {
     interface View extends BaseContract.View<Presenter> {
         //功能1接口回调
-        void onRefreshDone(List<Person>list);
+        void onRefreshDone(List<Person> list);
 
     }
 

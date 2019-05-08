@@ -17,6 +17,5 @@ public class ReleaseActivity extends Activity {
     public static void show(Context context, Intent intent) {
         context.startActivity(intent);
     }
-    
 
 }

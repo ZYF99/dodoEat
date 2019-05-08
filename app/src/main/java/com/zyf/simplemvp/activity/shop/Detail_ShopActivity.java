@@ -1,4 +1,4 @@
-package com.zyf.simplemvp.activity;
+package com.zyf.simplemvp.activity.shop;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +14,7 @@ import com.zyf.factory.model.shop.Shop;
 import com.zyf.factory.presenter.detail_shop.Contract_DetailShop;
 import com.zyf.factory.presenter.detail_shop.Presenter_DetailShop;
 import com.zyf.simplemvp.R;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 

@@ -9,22 +9,26 @@ import android.animation.ValueAnimator;
 import android.graphics.drawable.ColorDrawable;
 import android.util.Property;
 import android.view.View;
-import com.zyf.common.common.app.Activity;
+import com.zyf.common.common.app.PresenterActivity;
+import com.zyf.factory.model.User;
+import com.zyf.factory.presenter.launch.Contract_launch;
+import com.zyf.factory.presenter.launch.Presenter_launch;
 import com.zyf.simplemvp.R;
 import net.qiujuer.genius.res.Resource;
 import net.qiujuer.genius.ui.compat.UiCompat;
 
 
-public class LaunchActivity extends Activity {
-    //Drawable
+public class LaunchActivity extends PresenterActivity<Contract_launch.Presenter> implements Contract_launch.View {
+
     private ColorDrawable mBgDrawable;
 
-
+    //得到界面布局ID
     @Override
     protected int getContentLayoutId() {
         return R.layout.activity_launch;
     }
 
+    //初始化控件
     @Override
     protected void initWidget() {
         super.initWidget();
@@ -39,33 +43,15 @@ public class LaunchActivity extends Activity {
         mBgDrawable = drawable;
     }
 
+    //初始化数据
     @Override
     protected void initData() {
         super.initData();
         // 动画进入到50%等待PushId获取到
         // 检查等待状态
-        startAnim(0.5f, this::waitPushReceiverId);
+        startAnim(0.5f, this::waitPushReceiverIdDone);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-/*        if (getReady) {
-            reallySkip();
-        }*/
-    }
-
-    /**
-     * 等待个推框架对我们的PushId设置好值
-     */
-    private void waitPushReceiverId() {
-        waitPushReceiverIdDone();
-
-/*        // 循环等待
-        getWindow().getDecorView()
-                .postDelayed(this::waitPushReceiverId, 500);*/
-    }
 
     /**
      * 在跳转之前需要把剩下的50%进行完成
@@ -79,11 +65,8 @@ public class LaunchActivity extends Activity {
      * 真实的跳转
      */
     private void reallySkip() {
-        //权限检测，跳转
-
-        MainActivity.show(this);
-
-        finish();
+        //用户个人信息获取
+        mPresenter.getUserInfo();
     }
 
     /**
@@ -114,6 +97,7 @@ public class LaunchActivity extends Activity {
     }
 
 
+    //颜色过度器
     private Property<LaunchActivity, Object> property = new Property<LaunchActivity, Object>(Object.class, "color") {
         @Override
         public void set(LaunchActivity object, Object value) {
@@ -126,4 +110,17 @@ public class LaunchActivity extends Activity {
         }
     };
 
+
+    //初始化Presenter
+    @Override
+    public Contract_launch.Presenter initPresenter() {
+        return new Presenter_launch(this);
+    }
+
+    //个人信息获取成功后的回调
+    @Override
+    public void onUserInfoDone(User user) {
+        MainActivity.show(this);
+        finish();
+    }
 }

@@ -7,14 +7,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.zyf.common.common.widget.PlaceHolderView;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 
 /**
-* 封装带懒加载的Fragment
-* */
+ * 封装带懒加载的Fragment
+ */
 public abstract class Fragment extends android.support.v4.app.Fragment {
     protected View mRoot;
     protected Unbinder mRootUnbinder;
@@ -59,19 +61,19 @@ public abstract class Fragment extends android.support.v4.app.Fragment {
         super.setUserVisibleHint(isVisibleToUser);
 
         //isVisibleToUser这个boolean值表示:该Fragment的UI 用户是否可见，获取该标志记录下来
-        if(isVisibleToUser){
+        if (isVisibleToUser) {
             Log.d("AAAAA", "该Fragment可见了");
             isVisible = true;
             isCanLoadData();
-        }else{
+        } else {
             isVisible = false;
         }
     }
 
 
-    private void isCanLoadData(){
+    private void isCanLoadData() {
         //所以条件是view初始化完成并且对用户可见
-        if(isInitView && isVisible ){
+        if (isInitView && isVisible) {
             Log.d("AAAAA", "该Fragment加载数据了");
             lazyLoad();
             //防止重复加载数据
@@ -80,8 +82,8 @@ public abstract class Fragment extends android.support.v4.app.Fragment {
         }
     }
 
-    private void lazyLoad(){
-        if (mIsFirstInitData){
+    private void lazyLoad() {
+        if (mIsFirstInitData) {
             //触发一次后就不会触发
             mIsFirstInitData = false;
             //触发
@@ -105,7 +107,7 @@ public abstract class Fragment extends android.support.v4.app.Fragment {
 
     //初始化控件
     protected void initWidget(View root) {
-        mRootUnbinder = ButterKnife.bind(this,root);
+        mRootUnbinder = ButterKnife.bind(this, root);
     }
 
     //初始化数据
@@ -120,19 +122,21 @@ public abstract class Fragment extends android.support.v4.app.Fragment {
 
     }
 
-    /*返回案件触发时调用
+    /**
+     * 返回案件触发时调用
      * 返回true代表我已处理返回逻辑，ACTIVITY不用finish
      * 返回false代表我没处理逻辑，Activity走自己的逻辑
-     * */
+     */
     public boolean onBackPressed() {
         return false;
     }
 
     /**
      * 设置占位布局
-     * @param  placeHolderView 实现了占位布局规范的View
-     * */
-    public void setmPlaceHolderView(PlaceHolderView placeHolderView){
+     *
+     * @param placeHolderView 实现了占位布局规范的View
+     */
+    public void setmPlaceHolderView(PlaceHolderView placeHolderView) {
         this.mPlaceHolderView = placeHolderView;
     }
 

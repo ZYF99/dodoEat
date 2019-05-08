@@ -2,7 +2,7 @@ package com.zyf.factory.data.helper;
 
 
 import com.zyf.common.factory.data.base.DataSource;
-import com.zyf.factory.model.homepage.Author;
+import com.zyf.factory.model.dynamic.Author;
 import com.zyf.factory.model.dynamic.Dynamic;
 import com.zyf.factory.model.dynamic.RequestModel_getDynamicList;
 import java.util.ArrayList;
@@ -13,8 +13,6 @@ import java.util.List;
  * 数据的操作
  * */
 public class DynamicHelper {
-
-
 
     /**
      * @param model    传递一个fun1 model的接口

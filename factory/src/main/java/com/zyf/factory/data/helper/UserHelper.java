@@ -1,47 +1,36 @@
 package com.zyf.factory.data.helper;
 
 import com.zyf.common.factory.data.base.DataSource;
-import com.zyf.factory.model.fans.Fans;
-import com.zyf.factory.model.fans.RequestModel_getFansList;
-import java.util.ArrayList;
-import java.util.List;
+import com.zyf.factory.model.User;
+import com.zyf.factory.model.launch.RequestModel_getUserInfo;
 
-public class FansHelper {
+
+public class UserHelper {
 
     /**
-     * @param model    传递一个fun1 model的接口
+     * @param model_getUserInfo model    传递一个fun1 model的接口
      * @param callback 成功与失败的接口回送
      */
-    public static void getList(final RequestModel_getFansList model, final DataSource.Callback<List<Fans>> callback) {
+    public static void getUserInfo(final RequestModel_getUserInfo model_getUserInfo, final DataSource.Callback<User> callback) {
         //调用Retrofit对我们的网络请求接口做代理
         //RemoteService service = NetWork.remote();
 
+
         //模拟网络获取了数据
-        List<Fans> list = new ArrayList<>();
+        User user = User.getInstance();
+        //数据设置
+        user.setId(86486543);
+        user.setName("风在说话");
+        user.setSex(1);
+        user.setIconUrl("http://b-ssl.duitang.com/uploads/item/201706/22/20170622131955_h4eZS.thumb.700_0.jpeg");
+        user.setNum_fans(100);
+        user.setNum_following(200);
+        user.setNum_likesAndCollect(325);
+        user.setAddress("四川省成都市");
+        user.setLevelV(8);
 
-        Fans fans = new Fans("https://youimg1.c-ctrip.com/target/10020s000000hxqgv3498_R_671_10000_Q90.jpg?proc=autoorient","娜娜",true);
-        list.add(fans);
-        list.add(fans);
-        list.add(fans);
-        list.add(fans);
-        list.add(fans);
-        list.add(fans);
-        list.add(fans);
-        list.add(fans);
-        list.add(fans);
-        list.add(fans);
-        list.add(fans);
-        list.add(fans);
-        list.add(fans);
-        list.add(fans);
-        list.add(fans);
-        list.add(fans);
-        list.add(fans);
-        list.add(fans);
-        list.add(fans);
-        list.add(fans);
 
-        callback.onDataLoaded(list);
+        callback.onDataLoaded(user);
         /*
         //得到一个Call
         Call<RspModel<List<Dynamic>>> call = service.getList(model);
@@ -67,5 +56,6 @@ public class FansHelper {
 
 
     }
+
 
 }

@@ -1,14 +1,23 @@
-package com.zyf.factory.model.fans;
+package com.zyf.factory.model;
 
-public class Fans {
+public class Person {
+    //用户ID
+    int id;
+    //头像URL
     String iconUrl;
+    //用户昵称
     String name;
+    //是否已被我关注
     boolean isFollowing;
 
-    public Fans(String iconUrl, String name, boolean isFollowing) {
+    public Person(String iconUrl, String name, boolean isFollowing) {
         this.iconUrl = iconUrl;
         this.name = name;
         this.isFollowing = isFollowing;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getIconUrl() {
