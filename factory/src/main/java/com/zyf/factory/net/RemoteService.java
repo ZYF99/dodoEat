@@ -1,21 +1,22 @@
 package com.zyf.factory.net;
 
-import com.zyf.factory.model.RspModel;
+
 import com.zyf.factory.model.dynamic.Dynamic;
-import com.zyf.factory.model.dynamic.RequestModel_getDynamicList;
-
+import java.util.HashMap;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.QueryMap;
 
 public interface RemoteService {
 
-
+/*    //获取动态列表的请求
+    @POST("getdynamics.php")
+    Call<List<Dynamic>> getList(@Body RequestModel_getDynamicList requestModel_getDynamicList);
+    */
     //获取动态列表的请求
-    @GET("user/contact")
-    Call<RspModel<List<Dynamic>>> getList(RequestModel_getDynamicList model);
-
+    @GET("getdynamics.php")
+    Call<List<Dynamic>> getList(@QueryMap HashMap<String, Integer> params);
 
     /**
      * 获取联系人列表

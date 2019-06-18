@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -33,9 +34,11 @@ public class DynamicRecyclerAdapter extends BaseQuickAdapter<Dynamic, BaseViewHo
         //点赞数
         helper.setText(R.id.cell_likes, item.getLikes() + "");
         //封面大图
-        Glide.with(mContext).load(item.getImgUrlList().get(0)).placeholder(R.drawable.bg_placeholder).crossFade().into((ImageView) helper.getView(R.id.cell_image));
+        if (item.getImgUrlList().size() > 0) {
+            Glide.with(mContext).load(item.getImgUrlList().get(0)).placeholder(R.drawable.bg_placeholder).crossFade().into((ImageView) helper.getView(R.id.cell_image));
+        }
         //头像加载
-        Glide.with(mContext).load(item.getAuthor().getImageUrl()).into((ImageView) helper.getView(R.id.cell_author_portrait));
+        Glide.with(mContext).load(item.getAuthor().getImageUrl()).placeholder(R.drawable.bg_placeholder).into((ImageView) helper.getView(R.id.cell_author_portrait));
 
         //子控件监听点击
         helper.addOnClickListener(R.id.btn_cell);
@@ -64,8 +67,7 @@ public class DynamicRecyclerAdapter extends BaseQuickAdapter<Dynamic, BaseViewHo
         setOnItemChildLongClickListener(new OnItemChildLongClickListener() {
             @Override
             public boolean onItemChildLongClick(BaseQuickAdapter adapter, View view, int position) {
-                switch (view.getId())
-                {
+                switch (view.getId()) {
                     case R.id.btn_cell:
                         listener.onCellLongClick(position);
                         break;

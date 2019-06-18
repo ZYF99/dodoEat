@@ -25,6 +25,8 @@ import com.zyf.simplemvp.R;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Handler;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -89,7 +91,7 @@ public class Detail_DynamicActivity extends PresenterActivity<Contract_dynamic.P
         //toolbar中的标题加载
         tv_title.setText(dynamic.getAuthor().getName());
         //头像加载
-        Glide.with(this).load(dynamic.getAuthor().getImageUrl()).placeholder(R.drawable.bg_placeholder).crossFade().into(portraitView);
+        Glide.with(this).load(dynamic.getAuthor().getImageUrl()).into(portraitView);
         //作者名
         tv_name.setText(dynamic.getAuthor().getName());
         //内容

@@ -93,7 +93,7 @@
                 <com.zhengsr.viewpagerlib.view.BannerViewPager
                     android:id="@+id/dynamic_banner"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="@dimen/len_256"
                     android:clipChildren="false"
                     app:banner_isloop="false"
                     app:banner_loop_max_count="20"
@@ -121,7 +121,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="1/4"
+                        android:text="1/1"
                         android:textSize="12sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"

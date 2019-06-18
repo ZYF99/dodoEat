@@ -14,6 +14,9 @@ import com.zyf.factory.model.User;
 import com.zyf.factory.presenter.launch.Contract_launch;
 import com.zyf.factory.presenter.launch.Presenter_launch;
 import com.zyf.simplemvp.R;
+
+import net.qiujuer.genius.kit.handler.Run;
+import net.qiujuer.genius.kit.handler.runable.Action;
 import net.qiujuer.genius.res.Resource;
 import net.qiujuer.genius.ui.compat.UiCompat;
 
@@ -21,6 +24,7 @@ import net.qiujuer.genius.ui.compat.UiCompat;
 public class LaunchActivity extends PresenterActivity<Contract_launch.Presenter> implements Contract_launch.View {
 
     private ColorDrawable mBgDrawable;
+
 
     //得到界面布局ID
     @Override

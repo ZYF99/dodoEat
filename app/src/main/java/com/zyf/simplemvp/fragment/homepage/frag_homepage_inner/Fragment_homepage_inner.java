@@ -132,7 +132,9 @@ public class Fragment_homepage_inner extends PresenterFragment<Contract_fragment
             @Override
             public void call() {
                 Log.d(TAG, "刷新回调");
-                dynamicRecyclerAdapter.replaceData(newList);
+                list = newList;
+                dynamicRecyclerAdapter.setNewData(newList);
+                dynamicRecyclerAdapter.setEnableLoadMore(true);
                 refreshLayout.finishRefresh();
             }
         });
@@ -201,7 +203,6 @@ public class Fragment_homepage_inner extends PresenterFragment<Contract_fragment
         Animation heart_in = AnimationUtils.loadAnimation(getContext(), R.anim.anim_scale_in);
         Animation heart_out = AnimationUtils.loadAnimation(getContext(), R.anim.anim_scale_out);
         heartView.startAnimation(heart_in);
-
         ((ImageView) heartView).setImageResource(R.drawable.ic_heart_pressed);
         heartView.startAnimation(heart_out);
     }

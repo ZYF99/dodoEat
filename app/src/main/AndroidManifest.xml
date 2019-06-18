@@ -3,6 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.zyf.simplemvp">
 
+    <!-- 网络相关权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -13,13 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Main"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.following.FollowingActivity">
-
-        </activity>
-        <activity android:name=".activity.fans.FansActivity">
-
-        </activity>
-
+        <activity android:name=".activity.person.PersonActivity"></activity>
+        <activity android:name=".activity.following.FollowingActivity"></activity>
+        <activity android:name=".activity.fans.FansActivity"></activity>
         <activity
             android:name=".activity.LaunchActivity"
             android:label="@string/app_name"
@@ -30,14 +33,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.shop.Detail_ShopActivity"></activity>
+        <activity android:name=".activity.shop.Detail_ShopActivity" />
         <activity
             android:name=".activity.Detail_DynamicActivity"
-            android:launchMode="standard"></activity>
+            android:launchMode="standard" />
         <activity
             android:name=".activity.MainActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".activity.ReleaseActivity"></activity>
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.ReleaseActivity" />
     </application>
 
 </manifest>

@@ -34,7 +34,9 @@ public class PersonalDynamicRecyclerAdapter extends BaseQuickAdapter<Dynamic, Ba
         //点赞数
         helper.setText(R.id.cell_likes, item.getLikes() + "");
         //封面大图
-        Glide.with(mContext).load(item.getImgUrlList().get(0)).placeholder(R.drawable.bg_placeholder).crossFade().into((ImageView) helper.getView(R.id.cell_image));
+        if(item.getImgUrlList().size()>0){
+            Glide.with(mContext).load(item.getImgUrlList().get(0)).placeholder(R.drawable.bg_placeholder).crossFade().into((ImageView) helper.getView(R.id.cell_image));
+        }
         //头像加载
         Glide.with(mContext).load(item.getAuthor().getImageUrl()).into((ImageView) helper.getView(R.id.cell_author_portrait));
 

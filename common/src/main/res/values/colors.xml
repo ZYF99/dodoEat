@@ -12,7 +12,7 @@
     <!--背景色-->
     <color name="windowsBackground">#FFFFFF</color>
     <color name="windowsBackgroundLight">#FFFFFF</color>
-    <color name="listBackground">#F5F8FA</color>
+    <color name="listBackground">#EFF2F4</color>
     <color name="layoutBackGround">#F8FAFF</color>
 
     <!--字体颜色-->

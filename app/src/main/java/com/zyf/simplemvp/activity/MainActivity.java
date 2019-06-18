@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.zyf.common.common.app.Activity;
+import com.zyf.common.common.app.Application;
 import com.zyf.common.common.app.statushelper.StatusBarUtil;
 import com.zyf.simplemvp.R;
 import com.zyf.simplemvp.fragment.homepage.Fragment_homepage;
@@ -31,9 +32,8 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
     @BindView(R.id.navigation)
     BottomNavigationViewEx mNavigation;
 
-
+    //MainActivity显示的入口
     public static void show(Context context) {
-        //MainActivity显示的入口
         context.startActivity(new Intent(context, MainActivity.class));
     }
 
@@ -94,11 +94,9 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
     @Override
     protected void initData() {
         super.initData();
-
         //从底部导航中接管Menu，然后手动的触发第一次点击
         Menu menu = mNavigation.getMenu();
         menu.performIdentifierAction(R.id.nav_1, 0);
-
 
     }
 

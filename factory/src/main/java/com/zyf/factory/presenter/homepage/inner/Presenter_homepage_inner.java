@@ -13,6 +13,8 @@ import com.zyf.factory.presenter.inner.Presenter_fragment_innerList;
  */
 public class Presenter_homepage_inner extends Presenter_fragment_innerList<Dynamic> {
 
+    private int startPage = 0;
+    private int endPage = 1;
 
     public Presenter_homepage_inner(Contract_fragment_innerList.View mView, String type) {
         super(mView, type);
@@ -25,10 +27,11 @@ public class Presenter_homepage_inner extends Presenter_fragment_innerList<Dynam
     @Override
     public void refreshList() {
         super.refreshList();
-
+        startPage = 0;
+        endPage = 1;
         //根据接受的列表数据类型（关注，发现，附近)构造请求model
 
-        RequestModel_getDynamicList model_getDynamicList = new RequestModel_getDynamicList(type);
+        RequestModel_getDynamicList model_getDynamicList = new RequestModel_getDynamicList(startPage,endPage);
         DynamicHelper.getList(model_getDynamicList, this);
 
     }
@@ -39,8 +42,10 @@ public class Presenter_homepage_inner extends Presenter_fragment_innerList<Dynam
     @Override
     public void loadMoreList() {
         super.loadMoreList();
+        startPage++;
+        endPage++;
         //构建获取动态列表的请求的请求参数
-        RequestModel_getDynamicList model_getDynamicList = new RequestModel_getDynamicList(type);
+        RequestModel_getDynamicList model_getDynamicList = new RequestModel_getDynamicList(startPage,endPage);
         //调用工厂去获取动态列表
         DynamicHelper.getList(model_getDynamicList, this);
     }

@@ -17,6 +17,8 @@ import java.util.List;
 public abstract class
 Presenter_fragment_innerList<T> extends BasePresenter<Contract_fragment_innerList.View> implements Contract_fragment_innerList.Presenter, DataSource.Callback<List<T>> {
 
+
+
     private static final String TAG = "Presenter_fragment_innerList";
     //此Fragment的列表数据类型（发现，附近，火锅，串串。。。)
     final protected String type;

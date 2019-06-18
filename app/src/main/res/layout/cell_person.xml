@@ -11,11 +11,12 @@
 
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/cell_person_cell"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/len_8"
 
-        android:paddingLeft="@dimen/len_16">
+        android:paddingLeft="@dimen/len_16"
+        android:paddingTop="@dimen/len_8">
 
 
         <de.hdodenhof.circleimageview.CircleImageView

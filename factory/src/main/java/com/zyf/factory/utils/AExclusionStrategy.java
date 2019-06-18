@@ -13,9 +13,9 @@ public class AExclusionStrategy implements ExclusionStrategy {
         //return f.getDeclaredClass().equals(ModelAdapter.class);
 
         //跳过包含下“_”的属性
-        //return f.getName().contains("_");
+        return f.getName().contains("_");
 
-        return false;
+        //return false;
     }
 
     @Override

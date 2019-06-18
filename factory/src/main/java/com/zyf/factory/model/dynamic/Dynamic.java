@@ -9,12 +9,28 @@ import java.util.List;
  * 实现序列化 使其可在四大组件中传递
  */
 public class Dynamic implements Serializable {
+
+
     Author author;
     String title;
     String content;
     List<String> imgUrlList;
-    String vidieoUrl;
+    String videoUrl;
+    int likes;
+    int collections;
     boolean isLike = false;
+
+
+    public Dynamic(Author author, String title, String content, List<String> imgUrlList, String videoUrl, int likes, int collections, boolean isLike) {
+        this.author = author;
+        this.title = title;
+        this.content = content;
+        this.imgUrlList = imgUrlList;
+        this.videoUrl = videoUrl;
+        this.likes = likes;
+        this.collections = collections;
+        this.isLike = isLike;
+    }
 
     public boolean isLike() {
         return isLike;
@@ -22,42 +38,6 @@ public class Dynamic implements Serializable {
 
     public void setLike(boolean like) {
         isLike = like;
-    }
-
-    int likes;
-    int collection;
-
-
-    public Dynamic() {
-        this.author = null;
-        this.title = "";
-        this.content = "";
-        this.imgUrlList = null;
-        this.vidieoUrl = null;
-        this.likes = -1;
-        this.collection = -1;
-    }
-
-    //构造含有图片列表的对象
-    public Dynamic(Author author, String title, String content, List<String> imgUrlList, int likes, int collection) {
-        this.author = author;
-        this.title = title;
-        this.content = content;
-        this.imgUrlList = imgUrlList;
-        this.vidieoUrl = null;
-        this.likes = likes;
-        this.collection = collection;
-    }
-
-    //构造含有视频的对象
-    public Dynamic(Author author, String title, String content, String vidieoUrl, int likes, int collection) {
-        this.author = author;
-        this.title = title;
-        this.content = content;
-        this.vidieoUrl = vidieoUrl;
-        this.imgUrlList = null;
-        this.likes = likes;
-        this.collection = collection;
     }
 
     public Author getAuthor() {
@@ -92,12 +72,12 @@ public class Dynamic implements Serializable {
         this.imgUrlList = imgUrlList;
     }
 
-    public String getVidieoUrl() {
-        return vidieoUrl;
+    public String getVideoUrl() {
+        return videoUrl;
     }
 
-    public void setVidieoUrl(String vidieoUrl) {
-        this.vidieoUrl = vidieoUrl;
+    public void setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
     }
 
     public int getLikes() {
@@ -108,26 +88,11 @@ public class Dynamic implements Serializable {
         this.likes = likes;
     }
 
-    public int getCollection() {
-        return collection;
+    public int getCollections() {
+        return collections;
     }
 
-    public void setCollection(int collection) {
-        this.collection = collection;
-    }
-
-
-
-    @Override
-    public String toString() {
-        return "Dynamic{" +
-                "author=" + author +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", imgUrlList=" + imgUrlList +
-                ", vidieoUrl='" + vidieoUrl + '\'' +
-                ", likes=" + likes +
-                ", collection=" + collection +
-                '}';
+    public void setCollections(int collections) {
+        this.collections = collections;
     }
 }

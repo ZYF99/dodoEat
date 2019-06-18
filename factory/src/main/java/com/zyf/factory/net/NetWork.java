@@ -2,9 +2,7 @@ package com.zyf.factory.net;
 
 import com.zyf.common.common.Common;
 import com.zyf.factory.Factory;
-
 import java.io.IOException;
-
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -46,7 +44,7 @@ public class NetWork {
                         {
                             builder.addHeader("token",Model.getToken())
                         }*/
-                        builder.addHeader("Content-Type", "application/json");
+                        builder.addHeader("Content-Type", "application/x-www-form-urlencoded");
                         Request newrequest = builder.build();
                         //返回
                         return chain.proceed(newrequest);

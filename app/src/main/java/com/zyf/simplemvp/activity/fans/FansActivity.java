@@ -11,12 +11,14 @@ import com.zyf.factory.model.Person;
 import com.zyf.factory.presenter.fans.Contract_fans;
 import com.zyf.factory.presenter.fans.Presenter_fans;
 import com.zyf.simplemvp.R;
+import com.zyf.simplemvp.activity.person.PersonActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class FansActivity extends PresenterActivity<Contract_fans.Presenter> implements Contract_fans.View {
+public class FansActivity extends PresenterActivity<Contract_fans.Presenter> implements Contract_fans.View, FansRecyclerAdapter.Listener {
 
     @BindView(R.id.toolbar_title)
     TextView tv_title;
@@ -51,7 +53,7 @@ public class FansActivity extends PresenterActivity<Contract_fans.Presenter> imp
     protected void initWidget() {
         super.initWidget();
         tv_title.setText(R.string.myfans);
-        adapter = new FansRecyclerAdapter(R.layout.cell_person,list_fans);
+        adapter = new FansRecyclerAdapter(R.layout.cell_person,list_fans,this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
     }
@@ -77,4 +79,10 @@ public class FansActivity extends PresenterActivity<Contract_fans.Presenter> imp
     }
 
 
+    //适配器传来的Item事件
+    @Override
+    public void onCellClick(int position) {
+        Person person = list_fans.get(position);
+        PersonActivity.show(this);
+    }
 }

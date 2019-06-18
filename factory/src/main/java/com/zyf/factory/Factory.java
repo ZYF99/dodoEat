@@ -76,7 +76,7 @@ public class Factory {
         if (model == null) {
             return;
         }
-
+/*
         // 进行Code区分
         switch (model.getCode()) {
             case RspModel.SUCCEED:
@@ -86,6 +86,7 @@ public class Factory {
                 decodeRspCode(R.string.data_rsp_error_unknown, callback);
                 break;
         }
+        */
     }
 
     private static void decodeRspCode(@StringRes int resId,
