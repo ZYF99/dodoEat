@@ -1,6 +1,5 @@
 package com.zyf.factory.data.helper;
 
-
 import com.zyf.common.factory.data.base.DataSource;
 import com.zyf.factory.R;
 import com.zyf.factory.model.dynamic.Author;
@@ -27,10 +26,6 @@ public class DynamicHelper {
     public static void getList(final RequestModel_getDynamicList model, final DataSource.Callback<List<Dynamic>> callback) {
         //调用Retrofit对我们的网络请求接口做代理
         RemoteService service = NetWork.remote();
-
-
-
-
         //得到一个Call
         Call<List<Dynamic>> call = service.getList(model.getHashMap());
         //异步的请求
@@ -45,7 +40,6 @@ public class DynamicHelper {
                     Factory.decodeRspCode(rspModel,callback);
                 }
                 */
-
             }
 
             @Override

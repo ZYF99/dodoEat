@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
@@ -175,9 +176,9 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@drawable/tool_bar_shadow"
-
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
         <ImageView
             android:id="@+id/btn_forward"
             android:layout_width="@dimen/len_24"
