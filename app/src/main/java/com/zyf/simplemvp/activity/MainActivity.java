@@ -165,8 +165,11 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
-            case REQUEST_CODE_CHOOSE_PHOTO_ALBUM:
+            case REQUEST_CODE_CHOOSE:
+                Application.showToast("返回");
+                Application.showToast(resultCode+"");
                 if (resultCode == RESULT_OK) {
+
                     //图片路径 同样视频地址也是这个 根据requestCode
                     List<Uri> pathList = Matisse.obtainResult(data);
                     Application.showToast(pathList.toString());
@@ -191,6 +194,9 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
                                  }
 
                 break;
+                default:
+                    Application.showToast("requestCode:"+requestCode+"resultCode:"+resultCode);
+                    break;
         }
 
     }
