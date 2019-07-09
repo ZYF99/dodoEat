@@ -7,6 +7,6 @@ public class Common {
      */
     public interface Constance {
         //基础的网络请求地址
-        String API_URL = "http://vc4vmj.natappfree.cc/";
+        String API_URL = "http://3ik6j6.natappfree.cc/";
     }
 }

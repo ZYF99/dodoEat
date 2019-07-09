@@ -8,6 +8,7 @@
     <color name="colorDark">@color/black</color>
     <color name="colorAccentAlpha">#801572fc</color>
     <color name="launchback">#31373d</color>
+    <color name="colorGang">#EEEEEE</color>
 
     <!--背景色-->
     <color name="windowsBackground">#FFFFFF</color>
@@ -17,7 +18,8 @@
 
     <!--字体颜色-->
     <color name="textPrimary">#1F1F1F</color>
-    <color name="textSecond">#8D8B8B</color>
+    <color name="textSecond">#BEBEBE</color>
+    <color name="btnSecond">#A0A0A0</color>
     <color name="textAccent">@color/colorAccent</color>
     <color name="textLight">@color/colorLight</color>
     <color name="textDark">#202020</color>

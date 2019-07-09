@@ -5,6 +5,7 @@ import com.zyf.factory.R;
 import com.zyf.factory.model.dynamic.Author;
 import com.zyf.factory.model.dynamic.Dynamic;
 import com.zyf.factory.model.dynamic.RequestModel_getDynamicList;
+import com.zyf.factory.model.release.Model_release;
 import com.zyf.factory.net.NetWork;
 import com.zyf.factory.net.RemoteService;
 import java.util.ArrayList;
@@ -20,9 +21,11 @@ import retrofit2.Response;
 public class DynamicHelper {
 
     /**
-     * @param model    传递一个fun1 model的接口
+     * 获取动态列表
+     * @param model    传递一个RequestModel_getDynamicList的对象
      * @param callback 成功与失败的接口回送
      */
+
     public static void getList(final RequestModel_getDynamicList model, final DataSource.Callback<List<Dynamic>> callback) {
         //调用Retrofit对我们的网络请求接口做代理
         RemoteService service = NetWork.remote();
@@ -83,4 +86,14 @@ public class DynamicHelper {
     }
 
 
+    /**
+     * 发布一条动态
+     * @param model    传递一个Model_release的对象
+     * @param callback 成功与失败的接口回送
+     */
+    public static void release(final Model_release model, final DataSource.Callback<String> callback){
+
+        callback.onDataLoaded("~~发布");
+
+    }
 }

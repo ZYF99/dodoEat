@@ -32,6 +32,8 @@ import com.zyf.simplemvp.fragment.shop.Fragment_shop;
 import com.zyf.simplemvp.fragment.message.Fragment_message;
 import com.zyf.simplemvp.fragment.personal.Fragment_personal;
 import com.zyf.simplemvp.helper.NavHelper;
+
+import java.util.ArrayList;
 import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -109,7 +111,6 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
      *初始化主活动的ViewPager（首页，消息，我的三个大功能界面）
      *
      * */
-
     protected void initViewPager() {
         //初始化底部辅助工具类
         mNavHelper = new NavHelper<>(this, R.id.lay_container, getSupportFragmentManager(), this);
@@ -165,14 +166,19 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
+            //照片选择完成
             case REQUEST_CODE_CHOOSE:
-                Application.showToast("返回");
-                Application.showToast(resultCode+"");
                 if (resultCode == RESULT_OK) {
-
                     //图片路径 同样视频地址也是这个 根据requestCode
                     List<Uri> pathList = Matisse.obtainResult(data);
-                    Application.showToast(pathList.toString());
+                    List<String> list = new ArrayList<>();
+                    for (Uri i:pathList) {
+                        list.add(i.toString());
+                    }
+
+                    Intent intent = new Intent(MainActivity.this,ReleaseActivity.class);
+                    intent.putStringArrayListExtra("imgList", (ArrayList<String>) list);
+                    ReleaseActivity.show(MainActivity.this,intent);
                 }
                 break;
 
@@ -192,7 +198,6 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
                                          Application.showToast("权限获取成功");
                                          }
                                  }
-
                 break;
                 default:
                     Application.showToast("requestCode:"+requestCode+"resultCode:"+resultCode);
@@ -214,7 +219,6 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
                 //已授权 显示图片画廊
                 showImageGallery();
             }
-
         }
     }
 
@@ -232,7 +236,7 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
                 .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        finish();
+                        //finish();
                     }
                 }).setCancelable(false).show();
     }
@@ -245,17 +249,12 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
     //展示图片选择画廊
     private void showImageGallery() {
         Matisse.from(MainActivity.this)
-
 /*                //选择视频和图片
                 .choose(MimeType.ofAll())*/
-
                 //选择图片
                 .choose(MimeType.ofImage())
-
 /*                //选择视频
-                .choose(MimeType.ofVideo())*//*
-
-         */
+                .choose(MimeType.ofVideo())*/
 /*                //自定义选择选择的类型
                 .choose(MimeType.of(MimeType.JPEG,MimeType.AVI))*/
 

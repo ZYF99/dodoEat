@@ -2,12 +2,200 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"
-        app:layout_constraintTop_toTopOf="parent" />
+        layout="@layout/toolbar" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/actionBarWithStatusBarSizeWithShadow">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/len_20"
+            android:layout_marginEnd="@dimen/len_20"
+            android:paddingBottom="@dimen/len_10"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/text_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="0"
+                android:text="已选图片"
+                android:textColor="@color/black"
+                android:textSize="@dimen/len_16" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rec_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_4"
+                android:layout_weight="0"
+                android:background="#08E91E1E"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/len_8"
+                android:paddingTop="@dimen/len_8"
+                android:paddingRight="@dimen/len_8"
+                android:paddingBottom="@dimen/len_8">
+
+            </android.support.v7.widget.RecyclerView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_20"
+                android:layout_weight="0"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/release_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="加个标题会有更多赞哦~"
+                    android:inputType="text"
+                    android:maxLength="12"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/textSecond"
+                    android:textCursorDrawable="@drawable/my_cursor"
+                    android:textSize="@dimen/font_14" />
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/len_8"
+                    android:layout_marginBottom="@dimen/len_8"
+                    android:background="@color/colorGang" />
+
+                <EditText
+                    android:id="@+id/release_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@null"
+                    android:ems="10"
+                    android:gravity="start"
+                    android:hint="说说此刻的想法"
+                    android:inputType="text"
+                    android:maxLines="20"
+                    android:paddingBottom="@dimen/len_60"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/textSecond"
+                    android:textCursorDrawable="@drawable/my_cursor"
+                    android:textSize="@dimen/len_16" />
+
+                <View
+                    android:id="@+id/gang6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGang" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_position"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/len_16"
+                android:paddingBottom="@dimen/len_16">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:tint="@color/textSecond"
+                    app:srcCompat="@drawable/icon_position" />
+
+                <TextView
+                    android:id="@+id/tv_position"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/len_20"
+                    android:layout_marginLeft="@dimen/len_4"
+                    android:layout_weight="1"
+                    android:text="添加地点"
+                    android:textColor="@color/textSecond"
+                    android:textSize="@dimen/font_14" />
+
+                <ImageView
+                    android:id="@+id/img_right"
+                    android:layout_width="@dimen/len_20"
+                    android:layout_height="@dimen/len_20"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="@dimen/len_4"
+                    android:layout_weight="0"
+                    android:tint="@color/textSecond"
+                    app:srcCompat="@drawable/icon_right" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/gang7"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="0"
+                android:background="@color/colorGang" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/len_24"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/len_10"
+                    android:layout_weight="0"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:tint="@color/btnSecond"
+                        app:srcCompat="@drawable/icon_draft" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/len_10"
+                        android:gravity="center"
+                        android:text="存草稿"
+                        android:textColor="@color/btnSecond" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_release"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/len_44"
+                    android:layout_marginLeft="@dimen/len_40"
+                    android:layout_weight="0"
+                    android:background="@drawable/bg_cornerrect"
+                    android:text="发布" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -149,8 +149,11 @@ public class Fragment_personal_inner extends PresenterFragment<Contract_fragment
             @Override
             public void call() {
                 Log.d(TAG, "刷新回调");
-                personalDynamicRecyclerAdapter.replaceData(newList);
+                if(newList!=null){
+                    personalDynamicRecyclerAdapter.replaceData(newList);
+                }
                 refreshLayout.finishRefresh();
+
             }
         });
     }
@@ -162,10 +165,10 @@ public class Fragment_personal_inner extends PresenterFragment<Contract_fragment
             @Override
             public void call() {
                 Log.d(TAG, "加载回调");
-                if (newList.size() > 0) {
+
+                if (newList!=null&&newList.size() > 0) {
                     personalDynamicRecyclerAdapter.addData(newList);
                     personalDynamicRecyclerAdapter.loadMoreComplete();
-
                 } else {
                     personalDynamicRecyclerAdapter.loadMoreEnd();
                 }

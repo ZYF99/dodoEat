@@ -40,8 +40,10 @@ dependencies {
     implementation "com.scwang.smartrefresh:SmartRefreshHeader:$rootProject.ext.smartrefreshlayoutVersion"
     //BRVAH 强大的recyclerView框架
     implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.ext.brvahVersion"
+
     //zyf ui
     //implementation "com.github.ZYF99:UI2:$rootProject.ext.zyfuiVersion"
+
     //ViewPagerHelper
     implementation "com.github.LillteZheng:ViewPagerHelper:v$rootProject.ext.viewpagerhelperVersion"
     //BottomNavigationViewEx
@@ -51,7 +53,9 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
     //matisse
     implementation "com.zhihu.android:matisse:$rootProject.ext.matiseeVersion"
-
+    //glide-transformations
+    implementation "jp.wasabeef:glide-transformations:$rootProject.ext.glideTransformationsVersion"
+    implementation "jp.co.cyberagent.android.gpuimage:gpuimage-library:$rootProject.ext.gpuimageVersion"
 
     implementation project(':factory')
     implementation project(':common')

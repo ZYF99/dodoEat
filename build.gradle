@@ -46,6 +46,9 @@ ext {
     viewpagerhelperVersion = '1.3'
     brvahVersion = "2.9.46"
     glideVersion = '3.7.0'
+    glideTransformationsVersion = '2.0.2'
+    gpuimageVersion = '1.4.1'
+
     smartrefreshlayoutVersion = "1.1.0-alpha-14"
 
 }

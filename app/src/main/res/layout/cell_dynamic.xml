@@ -68,7 +68,7 @@
                     android:layout_width="@dimen/len_16"
                     android:layout_height="@dimen/len_16"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/icon"
+                    android:src="@drawable/circle"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

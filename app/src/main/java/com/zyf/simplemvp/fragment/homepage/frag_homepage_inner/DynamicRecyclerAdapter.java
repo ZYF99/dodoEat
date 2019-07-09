@@ -5,13 +5,11 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.zyf.factory.model.dynamic.Dynamic;
 import com.zyf.simplemvp.R;
-
 import java.util.List;
 
 public class DynamicRecyclerAdapter extends BaseQuickAdapter<Dynamic, BaseViewHolder> {
@@ -37,6 +35,7 @@ public class DynamicRecyclerAdapter extends BaseQuickAdapter<Dynamic, BaseViewHo
         if (item.getImgUrlList().size() > 0) {
             Glide.with(mContext).load(item.getImgUrlList().get(0)).placeholder(R.drawable.bg_placeholder).crossFade().into((ImageView) helper.getView(R.id.cell_image));
         }
+
         //头像加载
         Glide.with(mContext).load(item.getAuthor().getImageUrl()).placeholder(R.drawable.bg_placeholder).into((ImageView) helper.getView(R.id.cell_author_portrait));
 
